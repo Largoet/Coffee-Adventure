@@ -18,6 +18,7 @@
 
 .game-board{
   overflow: none;
+  position: relative;
 
 }
 
@@ -77,22 +78,15 @@ br {
   margin: 10px 0;
 }
 
-
-/** {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.mug-hidden-button {
+  position: absolute;
+  top: 42%;
+  left: 93%;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  padding: 3rem;
+  opacity: 0%;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
-img {
-  width: 100%;
-  height: auto;
-  
-  
+.mug-hidden-button:hover{
+  cursor: pointer;
 }
