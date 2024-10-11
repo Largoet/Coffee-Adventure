@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ body {
+  background-color: black;
+  height: 100%;
+  width: auto;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-board{
+  overflow: none;
+
+}
+
+.Starter {
+  display: block;
+  width: auto; 
+  height: 100vh; 
+  object-fit: cover; 
+  position: relative;
+}
+
+.button-design{
+  background-color: #D49838;
+  border: none;
+  font-family: "Space Mono", monospace;
+  opacity: 80%;
+  border-radius: 34px;
+  cursor: pointer;
+}
+.tuto-button{
+  position: absolute;   
+  top: 18%; 
+  padding: 3vh;
+  margin: 5vh;
+  
+ 
+}
+.hidden-button{
+  position: absolute;
+  top:20%;
+  left:20%;
+  padding: 5vh;
+}
+
+.button-design:hover{
+  background-color: #f6b651; 
+ }
+
+br {
+  display: block;
+  margin: 10px 0;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  float: inline-start;
+  position: absolute;
+
+}
+.up {
+
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+ 
+
+}
+/** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: auto;
+  
+  
+}
