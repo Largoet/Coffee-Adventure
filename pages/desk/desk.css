@@ -56,26 +56,28 @@
   background-color: #f6b651; 
  }
 
+.arrow-img{
+  width: 31px;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 4%;
+  left: 48%;
+  border: none;
+  padding: 0;
+  border-color: black;
+  background-color: black;
+}
+
+.arrow-img:hover{
+  cursor: pointer;
+}
+
 br {
   display: block;
   margin: 10px 0;
 }
 
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  padding: 3px;
-  float: inline-start;
-  position: absolute;
 
-}
-.up {
-
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
- 
-
-}
 /** {
   margin: 0;
   padding: 0;
