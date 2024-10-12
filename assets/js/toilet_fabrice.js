@@ -1,16 +1,33 @@
-let inventoryWrapperOnClic = {
+const inventoryWrapperOnClic = {
   isOpen: false,
-  element: document.querySelector(".bg-inventory")
+  element: document.querySelector(".inventory-bag")
+}
+
+const inventory = document.querySelector(".bg-inventory");
+
+const inventoryManager = function (pWidth, pIsOpen) {
+  const isOpen = pIsOpen ? inventory.classList.add('unroll', 'hover') : inventory.classList.remove('unroll', 'hover');
+
+  inventory.style.width = pWidth;
+  inventoryWrapperOnClic.isOpen = pIsOpen;
 }
 
 inventoryWrapperOnClic.element.addEventListener('click', () => {
-  console.log(inventoryWrapperOnClic.isOpen);
   if (!inventoryWrapperOnClic.isOpen) {
-    inventoryWrapperOnClic.element.style.width = "500px";
-    inventoryWrapperOnClic.isOpen = true;
-  } else {
-    inventoryWrapperOnClic.element.style.width = "100px";
-    inventoryWrapperOnClic.isOpen = false;
+    inventoryManager("350%", true);
   }
-  console.log(inventoryWrapperOnClic.isOpen);
+})
+
+document.addEventListener('mouseover', (event) => {
+  if (event.target === inventoryWrapperOnClic.element || event.target === inventory) {
+    inventory.classList.add('hover');
+    console.log('Class hover ajouté !');
+
+  } else {
+    inventory.classList.remove('hover');
+
+    if (inventoryWrapperOnClic.isOpen) {
+      inventoryManager("100%", false);
+    }
+  }
 })
