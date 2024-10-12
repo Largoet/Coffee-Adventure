@@ -1,6 +1,9 @@
 :root {
   --bg-black: #000;
   --primary-color-inventory: #D49838;
+  --polygon-fill: #fff;
+  --polygon-stroke: #000;
+  --polygon-stroke-width: 2;
 }
 
 * {
@@ -21,9 +24,12 @@ body {
 
 main {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 3fr;
   grid-template-columns: .15fr 1fr .15fr;
-  grid-template-areas: "aside center bg";
+  grid-template-areas: 
+    "aside center bg"
+    "aside center bg"
+    "aside center bg";
   width: 100vw;
   height: 100vh;
 }
@@ -34,7 +40,40 @@ aside {
   height: 100%; 
 }
 
-.center2 {
+.wrapper-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  z-index: 1;
+}
+
+.inventory-wrapper {
+  position: relative;
+}
+
+.inventory-bag {
+  width: 100%;
+  height: auto;
+  grid-area: 1/1;
+  /* justify-self: flex-end; */
+  z-index: 1;
+}
+
+.bg-inventory {
+  /* position:absolute; */
+  width: 100%;
+  height: 150px;
+  /* top: 0; */
+  /* left: 0; */
+  /* justify-self: flex-end; */
+  grid-area: 1/1;
+  background-color: var(--primary-color-inventory);
+}
+
+.game-area {
+  position: relative;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
@@ -42,63 +81,57 @@ aside {
     ". top ."
     "left . right"
     ". bottom .";
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+}
+  
+.btn-arrows {
+  display: flex;
+  z-index: 1;
 }
 
-.btn-horizontal-direction {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.arrow-polygon {
+  fill: var(--polygon-fill);
+  stroke: var(--polygon-stroke);
+  stroke-width: var(--polygon-stroke-width);
+  point: var(--polygon-points);
 }
 
-.btn-vertical-direction-up {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.img-btn-arrows {
+  width: 15px;
+  height: 15px;
+  transition: all .1s ease-in;
 }
 
-.btn-vertical-direction-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.img-btn-arrows:hover {
+  transform: scaleX(150%) scaleY(150%);
 }
 
 .btn-top {
   grid-area: top;
-  /* transform: translateY(-40%) rotate(90deg); */
-  z-index: 1;
-}
-
-.btn-bottom {
-  grid-area: bottom;
-  /* transform: rotate(-90deg); */
-  z-index: 1;
-}
-
-.btn-left {
-  grid-area: left;
-  /* transform: translateX(-40%); */
-  z-index: 1;
+  transform: rotate(90deg);
+  justify-self: center;
+  align-self: center;
 }
 
 .btn-right {
   grid-area: right;
-  /* transform: rotate(180deg) translateX(-40%); */
-  z-index: 1;
+  transform: rotate(180deg);
+  justify-self: center;
+  align-self: center;
 }
 
-.wrapper-aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+.btn-bottom {
+  grid-area: bottom;
+  transform: rotate(-90deg);
+  justify-self: center;
+  align-self: center;
 }
 
-img.inventory-bag {
-  width: 100%;
-  height: auto;
+.btn-left {
+  grid-area: left;
+  justify-self: center;
+  align-self: center;
 }
 
 button {
@@ -106,22 +139,12 @@ button {
   height: 35px;
 }
 
-section.grid-container {
+.front-toilet {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-img.front-toilet {
+  object-fit: cover;
+  justify-self: center;
+  align-self: center;
   width: auto;
   height: 100vh;
   z-index: -1;
-}
-
-.center2>div {
-  width: 100%;
-  height: 100%;
 }
