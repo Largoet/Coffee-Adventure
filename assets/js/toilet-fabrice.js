@@ -1,3 +1,6 @@
+import {soundManager} from './sound-manager.js';
+// import {panel} from './panel-manager.js';
+
 const inventoryWrapperOnClic = {
   isOpen: false,
   element: document.querySelector(".inventory-bag")
@@ -11,6 +14,26 @@ const inventoryManager = function (pWidth, pIsOpen) {
   inventory.style.width = pWidth;
   inventoryWrapperOnClic.isOpen = pIsOpen;
 }
+
+window.addEventListener('load', () => {
+  soundManager.play();
+  soundManager.keydownManager();
+  soundManager.setting();
+  soundManager.clickManager();
+
+  const soundSetting = document.querySelector('.sound-setting-wrapper');
+  soundSetting.addEventListener('click', () => {
+    const settingPanel = document.querySelector('#setting-panel');
+
+    const isDisplayNone = window.getComputedStyle(settingPanel).visibility === 'hidden';
+
+    if (isDisplayNone) {
+      settingPanel.style.visibility = 'visible';
+    } else {
+      settingPanel.style.visibility = 'hidden';
+    }
+  })
+})
 
 inventoryWrapperOnClic.element.addEventListener('click', () => {
   if (!inventoryWrapperOnClic.isOpen) {
