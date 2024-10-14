@@ -48,8 +48,8 @@
 }
 .hidden-button{
   position: absolute;
-  top:20%;
-  left:20%;
+  top:30%;
+  left:1%;
   padding: 5vh;
 }
 
@@ -84,9 +84,32 @@ br {
   left: 93%;
   border-radius: 100%;
   transform: translate(-50%, -50%);
-  padding: 3rem;
+  padding: 2vh;
   opacity: 0%;
+  background-color: transparent;
+  border: 2px solid transparent;
 }
+
+.nothing-to-see{
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4vh;
+  padding-left: 20%;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+}
+.nothing-to-see:disabled{
+  background-color: transparent;
+
+}
+
+.nothing-to-see:hover{
+  cursor: pointer;
+}
+
 .mug-hidden-button:hover{
   cursor: pointer;
 }
