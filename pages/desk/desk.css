@@ -18,6 +18,7 @@
 
 .game-board{
   overflow: none;
+  position: relative;
 
 }
 
@@ -47,8 +48,8 @@
 }
 .hidden-button{
   position: absolute;
-  top:20%;
-  left:20%;
+  top:30%;
+  left:1%;
   padding: 5vh;
 }
 
@@ -56,41 +57,59 @@
   background-color: #f6b651; 
  }
 
+.arrow-img{
+  width: 31px;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 4%;
+  left: 48%;
+  border: none;
+  padding: 0;
+  border-color: black;
+  background-color: black;
+}
+
+.arrow-img:hover{
+  cursor: pointer;
+}
+
 br {
   display: block;
   margin: 10px 0;
 }
 
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  padding: 3px;
-  float: inline-start;
+.mug-hidden-button {
   position: absolute;
-
-}
-.up {
-
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
- 
-
-}
-/** {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  top: 42%;
+  left: 93%;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  padding: 2vh;
+  opacity: 0%;
+  background-color: transparent;
+  border: 2px solid transparent;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
+.nothing-to-see{
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4vh;
+  padding-left: 20%;
+  background-color: transparent;
+  color: transparent;
+  border: none;
 }
-img {
-  width: 100%;
-  height: auto;
-  
-  
+.nothing-to-see:disabled{
+  background-color: transparent;
+
+}
+
+.nothing-to-see:hover{
+  cursor: pointer;
+}
+
+.mug-hidden-button:hover{
+  cursor: pointer;
 }
