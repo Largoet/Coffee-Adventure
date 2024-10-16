@@ -19,9 +19,10 @@ window.addEventListener('load', () => {
   soundManager.keydownManager();
   soundManager.clickManager();
 
-  const loadRoom = document.querySelector('#currentRoom');
-  loadRoom.setAttribute('src', room.loadRoom('toiletMain'));
-  room.loadArrows();
+  room.start(room.firstRoom);
+  // const loadRoom = document.querySelector('#currentRoom');
+  // loadRoom.setAttribute('src', room.loadRoom('toiletMain'));
+  // room.loadArrows();
 
   const soundSetting = document.querySelector('.sound-setting-wrapper');
   soundSetting.addEventListener('click', (event) => {
@@ -34,8 +35,6 @@ window.addEventListener('load', () => {
       settingPanel.style.visibility = 'hidden';
     }
   })
-
-  time.decrease();
 })
 
 const close = document.querySelector('#close');// close the panel
@@ -52,8 +51,6 @@ document.addEventListener('keydown', (event) => {
   if (event.key === "Escape") {
     settingPanel.style.visibility = 'hidden';
   }
-
-  room.keydown(room.loadRoom(event.code));
 })
 
 inventoryWrapperOnClic.element.addEventListener('click', () => {
