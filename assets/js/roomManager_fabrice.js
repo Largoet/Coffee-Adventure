@@ -3,13 +3,17 @@ const roomList = {
     room: {
       toiletMain: {
         img : "../assets/images/jpg_files/toilet/room_toilette_entry-cofee_adventure.jpg",
-        direction: ["down"],
-        arrowDown: 'desktopMain'
+        direction: ["down", "up"],
+        up:'toiletInside',
+        down: 'desktopMain'
       },
+
       toiletInside: {
         img : "../assets/images/jpg_files/toilet/room_toilette_inside-cofee_adventure.jpg",
         direction: ["down"],
-      },
+        down:'toiletMain'
+        },
+
       toilet: {
         img : "../assets/images/jpg_files/toilet/room_toilette_toilet-cofee_adventure.jpg",
         direction: ["down"]
@@ -21,25 +25,77 @@ const roomList = {
     room: {
       desktopMain: {
         img : "../assets/images/jpg_files/desktop/room_bureau-cofee_adventure.jpg",
-        direction: ["up", "right", "down", "left"]
+        direction: ["up", "right", "down", "left"],
+        up: ["toiletMain"],
+        down: ["startMain"],
+        right: ["outMain"],
+        left: ["kitchenMain"]
+      }
+    }
+  },
+
+  out: {
+    room: {
+      outMain: {
+        img : "../assets/images/jpg_files/out/room_out_01-cofee_adventure.jpg",
+        direction: ["left"],
+        left: ["desktopMain"]
+      }
+    }
+  },
+
+  start: {
+    room: {
+      startMain: {
+        img : "../assets/images/jpg_files/start/room_start-cofee_adventure.jpg",
+        direction: ["down"],
+        down: ["desktopMain"]
+      }
+    }
+  },
+
+  kitchen: {
+    room: {
+      kitchenMain: {
+        img : "../assets/images/jpg_files/kitchen/room_cuisine_04-cofee_adventure.jpg",
+        direction: ["right"],
+        right: ["desktopMain"]
       }
     }
   }
 }
 
 const rooms = {
+  startMain: roomList.start.room.startMain,
+  kitchenMain: roomList.kitchen.room.kitchenMain,
+  desktopMain: roomList.desktop.room.desktopMain,
   toiletMain: roomList.toilet.room.toiletMain,
   toiletInside: roomList.toilet.room.toiletInside,
   toilet: roomList.toilet.room.toilet,
-  desktopMain: roomList.desktop.room.desktopMain
+  outMain: roomList.out.room.outMain
 }
+
+const btnTop = document.getElementById('btnTop');
+const btnRight = document.getElementById('btnRight');
+const btnBottom = document.getElementById('btnBottom');
+const btnLeft = document.getElementById('btnLeft');
+
+const loadRoom = document.querySelector('#currentRoom');
 
 let currentRoom = null;
 
 export const room = {
+  firstRoom: 'startMain',
+
+  start: function(pRoom) {
+    loadRoom.setAttribute('src', room.loadRoom(pRoom));
+    room.loadArrows();
+  },
+  
   loadRoom: function(pRoom) {
+    room.hideArrows();
     currentRoom = rooms[pRoom];
-    console.log(roomList.toilet.room.toiletMain.arrowDown);
+    room.loadArrows();
     return currentRoom.img;
   },
 
@@ -47,19 +103,19 @@ export const room = {
     for (let n = 0; n <= currentRoom.direction.length; n++) {
       switch (currentRoom.direction[n]) {
         case "up":
-          setArrows('.btn-top');
+          btnTop.style.visibility = 'visible';
           break;
 
         case "right":
-          setArrows('.btn-right');
+          btnRight.style.visibility = 'visible';
           break;
 
         case "down":
-          setArrows('.btn-bottom');
+          btnBottom.style.visibility = 'visible';
           break;
 
         case "left":
-          setArrows('.btn-left');
+          btnLeft.style.visibility = 'visible';
           break;
 
         default:
@@ -68,13 +124,11 @@ export const room = {
     }
   },
 
-  keydown: function (event) {
-    currentRoom = rooms[event];
-    console.log(currentRoom);
-
-    const loadRoom = document.querySelector('#currentRoom');
-    loadRoom.setAttribute('src', room.loadRoom(rooms[event]));
-    room.loadArrows();
+  hideArrows: function() {
+    btnTop.style.visibility = 'hidden';
+    btnRight.style.visibility = 'hidden';
+    btnBottom.style.visibility = 'hidden';
+    btnLeft.style.visibility = 'hidden';
   }
 }
 
@@ -82,3 +136,23 @@ function setArrows(pClass) {
   const arrow = document.querySelector(pClass);
   return arrow.style.visibility = 'visible';
 }
+
+const up = document.querySelector('#btnTop');
+up.addEventListener('click', () => {
+  room.start(currentRoom.up);
+})
+
+const down = document.querySelector('#btnBottom');
+down.addEventListener('click', () => {
+  room.start(currentRoom.down);
+})
+
+const left = document.querySelector('#btnLeft');
+left.addEventListener('click', () => {
+  room.start(currentRoom.left);
+})
+
+const right = document.querySelector('#btnRight');
+right.addEventListener('click', () => {
+  room.start(currentRoom.right);
+})
