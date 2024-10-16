@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body,
+html {
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 100vh;
+  background-color: black;
+}
+
+/* ASIDE */
+aside {
+  background: #000;
+  display: grid;
+  grid-template-rows: 0.25fr 1fr 0.25fr;
+  height: 100vh;
+  padding: 0;
+}
+
+/* TIMER */
+.timer {
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  color: white;
+  width: 90px;
+  height: 50px;
+  margin: auto;
+}
+
+/* BOUTON INVENTAIRE */
+.inventory-container {
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Le conteneur devient le parent de référence pour le positionnement absolu du menu */
+}
+
+#inventoryButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: #d49838;
+}
+
+#inventoryButton img {
+  width: 90px;
+  height: 90px;
+}
+
+/* MENU INVENTAIRE */
+#inventoryMenu {
+  position: absolute;
+  top: 0; /* Ajuste la position verticale pour l'aligner au centre du bouton */
+  left: 100%; /* Positionne le menu à droite du bouton */
+  background: #333;
+  /* padding: 10px; */
+  border-radius: 5px;
+  display: none; /* Cache le menu par défaut */
+  width: calc(
+    3 * (100vw - 200px) / 3
+  ); /* Calcule la largeur pour occuper trois colonnes de la grille */
+}
+
+#inventoryMenu.show {
+  display: block; /* Affiche le menu quand la classe "show" est ajoutée */
+}
+
+.hidden {
+  display: none;
+}
+
+/* MAIN */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+main img {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+  width: 100%;
+  height: 100%;
+}
+
+/* BOUTONS */
+#deadbody {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  align-self: center;
+  justify-self: center;
+  background-color: #d49838;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+/* SOUNDSYSTEM */
+#setting-panel {
+  grid-area: 2/2/3/3;
+  justify-self: center;
+  align-self: center;
+  visibility: visible;
+  width: 90%;
+  height: 100%;
+  padding: 2%;
+  border: 3px solid var(--polygon-fill);
+  border-radius: 15px;
+  color: white;
+  background-color: var(--primary-color-inventory);
+  z-index: 2;
+}
+
+.panel-setting {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.panel-setting button {
+  width: 60px;
+  height: 30px;
+}
+
+.panel-setting > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+  font-size: var(--font-size-small);
+}
+
+#sound-level {
+  font-size: var(--font-size-small);
+}
