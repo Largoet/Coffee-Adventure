@@ -1,0 +1,213 @@
+:root {
+  --bg-black: #000;
+  --primary-color-inventory: #D49838;
+  --polygon-fill: #fff;
+  --polygon-stroke: #000;
+  --polygon-stroke-width: 2;
+  --font-size-large: 1.5rem;
+  --font-size-medium: 1.25rem;
+  --font-size-normal: 1rem;
+  --font-size-small: .9rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, button, a, h1, h2, h3, p {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size-normal);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-black);
+}
+
+main {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: .25fr 1fr;
+  grid-template-areas: "aside center";
+  width: 100vw;
+  height: 100vh;
+}
+
+aside {
+  grid-area: aside;
+  display: grid;
+  grid-template-rows: 1fr .25fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "chrono inventory";
+  width: 100%;
+  height: 100%;
+  border: 4px solid #6D5959;
+  z-index: 2;
+}
+
+.game-area {
+  grid-area: center;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    ". top ."
+    "left . right"
+    ". bottom .";
+    z-index: 1;
+}
+
+.btn-chrono {
+  grid-area: 1/1;
+  justify-self: center;
+  align-self: flex-start;
+}
+
+.inventory-bag {
+  grid-area: 4/1;
+  justify-self: center;
+  align-self: center;
+  width: 80%;
+  height: auto;
+  z-index: 1;
+}
+
+.bg-inventory {
+  grid-area: 4/1;
+  width: 100%;
+  height: 100%;
+  opacity: .75;
+  transition: all .1s ease-in-out;
+  background-color: var(--primary-color-inventory);
+}
+
+.bg-inventory.hover {
+  box-shadow: 0 0 10px 5px #fff;
+}
+
+.bg-inventory.unroll {
+  width: 350%;
+}
+  
+.btn-arrows {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
+}
+
+.img-btn-arrows {
+  width: 15px;
+  height: 15px;
+  transition: all .1s ease-in;
+}
+
+.img-btn-arrows:hover {
+  transform: scaleX(150%) scaleY(150%);
+}
+
+.btn-top {
+  visibility: hidden;
+  grid-area: top;
+  transform: rotate(90deg);
+}
+
+.btn-right {
+  visibility: hidden;
+  grid-area: right;
+  transform: rotate(180deg);
+}
+
+.btn-bottom {
+  visibility: hidden;
+  grid-area: bottom;
+  transform: rotate(-90deg);
+}
+
+.btn-left {
+  visibility: hidden;
+  grid-area: left;
+}
+
+button {
+  width: 80px;
+  height: 35px;
+}
+
+.front-toilet {
+  grid-area: 1/2/4/3;
+  justify-self: center;
+  align-self: center;
+  width: auto;
+  height: 100vh;
+}
+
+.sound-setting-wrapper {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  transition: all .2s ease;
+}
+
+.sound-setting-wrapper:hover {
+  transform: scaleX(150%) scaleY(150%);
+}
+
+#setting-panel {
+  grid-area: 2/2/3/3;
+  justify-self: center;
+  align-self: center;
+  visibility: hidden;
+  width: 90%;
+  height: 100%;
+  padding: 2%;
+  border: 3px solid var(--polygon-fill);
+  border-radius: 15px;
+  color: white;
+  background-color: var(--primary-color-inventory);
+  z-index: 2;
+}
+
+#close {
+  border: none;
+  align-self: flex-end;
+  width: 5%;
+  height: auto;
+  margin: 0 5px 0;
+  color: white;
+  font-size: var(--font-size-small);
+  background: none;
+}
+
+#close:hover {
+  color: #858585;
+}
+
+.panel-setting {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.panel-setting button {
+  width: 60px;
+  height: 30px;
+}
+
+.panel-setting>div {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+  font-size: var(--font-size-small);
+}
+
+#sound-level {
+  font-size: var(--font-size-small);
+}

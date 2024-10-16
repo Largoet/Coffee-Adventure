@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cofee adventure | Wild Code School</title>
+    <link rel="stylesheet" href="../assets/styles/toilet_fabrice.css">
+</head>
+<body>
+  <main>
+    <!-- =================== ASIDE =================== -->
+    <aside>
+      <!-- =================== Chrono =================== -->
+      <button class="btn-chrono">02:00</button>
+
+      <!-- =================== Bag pack =================== -->
+      <img class="inventory-bag" src="../assets/images/png_files/objet-sac-a-dos-cofee_adventure.png" alt="Inventaire.">
+      <div class="bg-inventory"></div>
+    </aside>
+
+    <!-- =================== GAME AREA =================== -->
+    <section class="game-area">
+
+      <!-- =================== Room =================== -->
+      <img id="currentRoom" class="front-toilet" src="../assets/images/jpg_files/toilet/room_toilette_entry-cofee_adventure.jpg"
+        alt="Les toilettes de la Wild Code School.">
+
+      <!-- =================== ARROWS =================== -->
+      <!-- =================== Top =================== -->
+      <div class="btn-arrows btn-top">
+        <a href="#" alt="Allez en face."><img class="img-btn-arrows" src="../assets/images/png_files/arrow.svg" alt=""></a>
+      </div>
+
+      <!-- =================== Right =================== -->
+      <div class="btn-arrows btn-right">
+        <a href="#" alt="Aller à droite"><img class="img-btn-arrows" src="../assets/images/png_files/arrow.svg" alt=""></a>
+      </div>
+
+      <!-- =================== Bottom =================== -->
+      <div class="btn-arrows btn-bottom">
+        <a href="#" alt="Retour en arrière"><img class="img-btn-arrows" src="../assets/images/png_files/arrow.svg" alt=""></a>
+      </div>
+
+      <!-- =================== Left =================== -->
+      <div class="btn-arrows btn-left">
+        <a href="#" alt=""><img class="img-btn-arrows" src="../assets/images/png_files/arrow.svg" alt=""></a>
+      </div>
+
+      <!-- =================== SOUND SETTING =================== -->
+      <section id="setting-panel">
+        <section class="panel-setting">
+          <div>
+            <h3>Paramètres de la musique</h3>
+            <button id="close">&times;</button>
+          </div>
+          <p id="sound-level"></p>
+          <section>
+            <button id="set-volume-low">-</button>
+            <button id="set-volume-high">+</button>
+          </section>
+          <button id="set-pause-music">Pause</button>
+        </section>
+      </section>
+    </section>
+    
+    <!-- =================== Audio =================== -->
+    <section class="sound-setting-wrapper">
+      <img width="20" src="https://img.icons8.com/?size=100&id=41563&format=png&color=FFFFFF" alt="Paramètres du jeu.">
+      <audio control src=""></audio>
+    </section>
+    
+  </main>
+
+  <script type="module" src="../assets/js/toilet-fabrice.js"></script>
+</body>
+</html>
