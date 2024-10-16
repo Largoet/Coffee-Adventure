@@ -4,18 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="desk.css">
-  <script src="desk.js"></script>
+
   <title>Document</title>
 </head>
-
+  
 <body>
 
-  <audio id="doom-music" loop> <source src="/assets/musique/0Doom 64 Main Theme.mp3" type="audio/mp3">
+
+  
+
+
+  <audio id="doom-music" loop> <source src="/assets/musique/0Doom 64 Main Theme.mp23" type="audio/mp3">
     Votre navigateur ne supporte pas l'audio HTML5.
   </audio>
   <section class="game-board">
    
+    
+
     <img class="Starter" src="/assets/images/jpg_files/start/room_start-cofee_adventure.jpg" alt="Vous vous tenez assis devant votre écran d'ordinateur">
+    
+    <section class="timer-container">
+      <p id="timer">
+        <span>0</span>
+        <span id="timer-min">4</span>
+        <span>:</span>
+        <span id="timer-sec-dizaine">5</span>
+        <span id="timer-sec-unites">9</span>
+      </p>
+  </section> 
+    
     <button type="button" hidden class="hidden-button button-design">
       <p><strong>C’est l’heure de la pause !</strong></p>
     </button> 
@@ -37,6 +54,7 @@
       afin de revenir à temps pour participer à l’émmargement organisé par notre nouveau 
       et grand leader, le généralissime koalamax, tout retard entrainera de funestes conscéquences..."<br><strong>bonne chance !</strong></button> 
 
+      <script src="desk.js"></script>
   </body>
 </html>
 
