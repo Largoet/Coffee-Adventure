@@ -1,5 +1,5 @@
 import {soundManager} from './sound-manager.js';
-import {room} from './roomManager_fabrice.js'
+import {room} from './roomManager_fabrice.js';
 
 const inventoryWrapperOnClic = {
   isOpen: false,
@@ -34,6 +34,8 @@ window.addEventListener('load', () => {
       settingPanel.style.visibility = 'hidden';
     }
   })
+
+  time.decrease();
 })
 
 const close = document.querySelector('#close');// close the panel
@@ -53,10 +55,6 @@ document.addEventListener('keydown', (event) => {
 
   room.keydown(room.loadRoom(event.code));
 })
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   soundManager.play();
-// })
 
 inventoryWrapperOnClic.element.addEventListener('click', () => {
   if (!inventoryWrapperOnClic.isOpen) {
