@@ -1,5 +1,5 @@
-const teams = false;
-const start = 'startMain';
+const teams = true;
+const start = 'toiletMain';
 
 const btnTop = document.getElementById('btnTop');
 const btnRight = document.getElementById('btnRight');
@@ -12,7 +12,7 @@ let currentRoom = null;
 if (teams) {
   loadRoom = document.querySelector('#currentRoom');
   let benjamin = document.getElementById('currentRoomTeams');
-  benjamin.href = '../pages/desktop_fabrice.html';
+  benjamin.href = '../pages/roomjl.html';
 } else {
   loadRoom = document.querySelector('#currentRoom');
 }
