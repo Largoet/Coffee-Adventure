@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="exterieur.css" />
+    <title>Exterieur</title>
+  </head>
+  <body>
+    <aside>
+      <div class="timer">
+        <span id="minutes">02</span>:<span id="seconds">00</span>
+      </div>
+      <div class="inventory-container">
+        <button type="button" id="inventoryButton">
+          <img
+            src="../assets/images/icon_png_files/objet-sac-a-dos-cofee_adventure.png"
+            alt="Bouton inventaire"
+          />
+        </button>
+        <div id="inventoryMenu" class="hidden">
+          <ul>
+            <li>
+              <img
+                class="item"
+                src="../assets/images/icon_png_files/objet-tasse-cofee_adventure.png"
+                alt="mug"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../assets/images/icon_png_files/objet-café-cofee_adventure.png"
+                alt="cafe"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../assets/images/icon_png_files/objet-dirty_water-cofee_adventure.png"
+                alt="eau"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../assets/images/icon_png_files/objet-filtre-cofee_adventure.png"
+                alt="filtre"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <img
+        src="../assets/images/jpg_files/out/room_out_01-cofee_adventure.jpg"
+        alt="tu te situe à l'entrée de l'école face à la rue, il y a un corps par terre, il tient un paquet de café dans sa main"
+      />
+      <button type="button" id="deadbody">
+        Il serait judicieux que je prenne le temps de le ramasser... un jour.
+      </button>
+      <!-- =================== SOUND SETTING =================== -->
+      <section id="setting-panel">
+        <section class="panel-setting">
+          <div>
+            <h3>Paramètres de la musique</h3>
+            <button id="close">&times;</button>
+          </div>
+          <p id="sound-level"></p>
+          <section>
+            <button id="set-volume-low">-</button>
+            <button id="set-volume-high">+</button>
+          </section>
+          <button id="set-pause-music">Pause</button>
+        </section>
+      </section>
+    </main>
+    <script src="exterieur.js"></script>
+  </body>
+</html>
