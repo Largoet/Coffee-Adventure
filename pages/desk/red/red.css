@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+video {
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+}
+
+body {
+    cursor: url('/assets/images/png_files/crosshair.webp') 16 16, auto;
+    background-color: #f0f0f0;
+    height: 100vh; 
+  }
