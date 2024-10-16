@@ -1,7 +1,7 @@
 
-let dizaine = 0;
-let unites = 1  ;
-let minutes = 1;
+let dizaine = 5;
+let unites = 9  ;
+let minutes = 4;
 
 const styleTimer = document.querySelector(".timer-container")
 const timerMinutes = document.querySelector("#timer-min");
@@ -72,7 +72,7 @@ hiddenButton.addEventListener("click", function(){
 });
 
 arrow.addEventListener("click", function(){
-  window.location.href = "http://www.w3schools.com";
+  window.location.href = "/pages/classroom/classroom.html";
 })
 
 
