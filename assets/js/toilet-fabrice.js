@@ -1,5 +1,5 @@
 import {soundManager} from './sound-manager.js';
-// import {panel} from './panel-manager.js';
+import {room} from './roomManager_fabrice.js'
 
 const inventoryWrapperOnClic = {
   isOpen: false,
@@ -16,15 +16,16 @@ const inventoryManager = function (pWidth, pIsOpen) {
 }
 
 window.addEventListener('load', () => {
-  soundManager.play();
   soundManager.keydownManager();
-  soundManager.setting();
   soundManager.clickManager();
 
-  const soundSetting = document.querySelector('.sound-setting-wrapper');
-  soundSetting.addEventListener('click', () => {
-    const settingPanel = document.querySelector('#setting-panel');
+  const loadRoom = document.querySelector('#currentRoom');
+  loadRoom.setAttribute('src', room.loadRoom('toiletMain'));
+  room.loadArrows();
 
+  const soundSetting = document.querySelector('.sound-setting-wrapper');
+  soundSetting.addEventListener('click', (event) => {
+    const settingPanel = document.querySelector('#setting-panel');
     const isDisplayNone = window.getComputedStyle(settingPanel).visibility === 'hidden';
 
     if (isDisplayNone) {
@@ -35,6 +36,28 @@ window.addEventListener('load', () => {
   })
 })
 
+const close = document.querySelector('#close');// close the panel
+const settingPanel = document.querySelector('#setting-panel');
+
+close.addEventListener('click', (event) => {
+  
+  if (event.target === close) {
+    settingPanel.style.visibility = 'hidden';
+  }
+})
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === "Escape") {
+    settingPanel.style.visibility = 'hidden';
+  }
+
+  room.keydown(room.loadRoom(event.code));
+})
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   soundManager.play();
+// })
+
 inventoryWrapperOnClic.element.addEventListener('click', () => {
   if (!inventoryWrapperOnClic.isOpen) {
     inventoryManager("350%", true);
@@ -44,8 +67,6 @@ inventoryWrapperOnClic.element.addEventListener('click', () => {
 document.addEventListener('mouseover', (event) => {
   if (event.target === inventoryWrapperOnClic.element || event.target === inventory) {
     inventory.classList.add('hover');
-    console.log('Class hover ajouté !');
-
   } else {
     inventory.classList.remove('hover');
 

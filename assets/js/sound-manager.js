@@ -1,4 +1,5 @@
-const audioRoom = new Audio("/assets/musique/0Doom_64_Main_Theme.mp3");
+const audioRoom = document.querySelector('audio');
+audioRoom.src = '../assets/musique/0Doom_64_Main_Theme.mp3';
 audioRoom.volume = .5;
 const btn = {
   increase : document.querySelector('#set-volume-high'),
@@ -13,6 +14,14 @@ export const soundManager = {
   keydownManager : function() {
     document.addEventListener('keydown', (event) => {
       switch (event.code) {
+        case "Semicolon":
+          if (audioRoom.muted) {
+            audioRoom.muted = false;
+          } else {
+            audioRoom.muted = true;
+          }
+          break;
+
         case "Enter":
           audioRoom.play();
           break;
@@ -22,12 +31,13 @@ export const soundManager = {
           break;
    
         case "NumpadAdd":
-          console.log('Touche +', event.code);
           audioRoom.volume = Math.min(audioRoom.volume + 0.1, 1);
+          btn.level.textContent = Math.floor(audioRoom.volume * 100) + "%";
           break;
     
         case "NumpadSubtract":        
           audioRoom.volume = Math.max(audioRoom.volume - 0.1, 0);
+          btn.level.textContent = Math.floor(audioRoom.volume * 100) + "%";
           break;
     
         default:
@@ -52,24 +62,13 @@ export const soundManager = {
       if (event.target === btn.pause) {
         if (audioRoom.paused) {
         audioRoom.play();
+        btn.pause.innerHTML = "Lecture";
 
         } else {
           audioRoom.pause();
-
+          btn.pause.innerHTML = "Pause";
         }
       }
-    })
-  },
-
-  play : function () {
-    audioRoom.play();
-  },
-
-  setting : function () {
-    const getSetting = document.querySelector(".sound-setting-wrapper");
-    
-    getSetting.addEventListener('clic', () => {
-      
     })
   }
 }

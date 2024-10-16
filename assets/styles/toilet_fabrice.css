@@ -4,6 +4,10 @@
   --polygon-fill: #fff;
   --polygon-stroke: #000;
   --polygon-stroke-width: 2;
+  --font-size-large: 1.5rem;
+  --font-size-medium: 1.25rem;
+  --font-size-normal: 1rem;
+  --font-size-small: .9rem;
 }
 
 * {
@@ -14,6 +18,7 @@ body, button, a, h1, h2, h3, p {
   text-decoration: none;
   margin: 0;
   padding: 0;
+  font-size: var(--font-size-normal);
 }
 
 body {
@@ -89,6 +94,8 @@ aside {
   
 .btn-arrows {
   display: flex;
+  justify-self: center;
+  align-self: center;
   z-index: 1;
 }
 
@@ -103,30 +110,26 @@ aside {
 }
 
 .btn-top {
+  visibility: hidden;
   grid-area: top;
   transform: rotate(90deg);
-  justify-self: center;
-  align-self: center;
 }
 
 .btn-right {
+  visibility: hidden;
   grid-area: right;
   transform: rotate(180deg);
-  justify-self: center;
-  align-self: center;
 }
 
 .btn-bottom {
+  visibility: hidden;
   grid-area: bottom;
   transform: rotate(-90deg);
-  justify-self: center;
-  align-self: center;
 }
 
 .btn-left {
+  visibility: hidden;
   grid-area: left;
-  justify-self: center;
-  align-self: center;
 }
 
 button {
@@ -169,6 +172,21 @@ button {
   z-index: 2;
 }
 
+#close {
+  border: none;
+  align-self: flex-end;
+  width: 5%;
+  height: auto;
+  margin: 0 5px 0;
+  color: white;
+  font-size: var(--font-size-small);
+  background: none;
+}
+
+#close:hover {
+  color: #858585;
+}
+
 .panel-setting {
   display: flex;
   flex-direction: column;
@@ -180,4 +198,16 @@ button {
 .panel-setting button {
   width: 60px;
   height: 30px;
+}
+
+.panel-setting>div {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+  font-size: var(--font-size-small);
+}
+
+#sound-level {
+  font-size: var(--font-size-small);
 }
