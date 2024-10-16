@@ -1,8 +1,28 @@
+const teams = false;
+const start = 'startMain';
+
+const btnTop = document.getElementById('btnTop');
+const btnRight = document.getElementById('btnRight');
+const btnBottom = document.getElementById('btnBottom');
+const btnLeft = document.getElementById('btnLeft');
+
+let loadRoom = '';
+let currentRoom = null;
+
+if (teams) {
+  loadRoom = document.querySelector('#currentRoom');
+  let benjamin = document.getElementById('currentRoomTeams');
+  benjamin.href = '../pages/desktop_fabrice.html';
+} else {
+  loadRoom = document.querySelector('#currentRoom');
+}
+
 const roomList = {
   toilet: {
     room: {
       toiletMain: {
         img : "../assets/images/jpg_files/toilet/room_toilette_entry-cofee_adventure.jpg",
+        href : "../../pages/desktop_fabrice.html",
         direction: ["down", "up"],
         up:'toiletInside',
         down: 'desktopMain'
@@ -47,7 +67,7 @@ const roomList = {
   start: {
     room: {
       startMain: {
-        img : "../assets/images/jpg_files/start/room_start-cofee_adventure.jpg",
+        img : !teams ? "../assets/images/jpg_files/start/room_start-cofee_adventure.jpg" : "",
         direction: ["down"],
         down: ["desktopMain"]
       }
@@ -75,27 +95,20 @@ const rooms = {
   outMain: roomList.out.room.outMain
 }
 
-const btnTop = document.getElementById('btnTop');
-const btnRight = document.getElementById('btnRight');
-const btnBottom = document.getElementById('btnBottom');
-const btnLeft = document.getElementById('btnLeft');
-
-const loadRoom = document.querySelector('#currentRoom');
-
-let currentRoom = null;
-
 export const room = {
-  firstRoom: 'startMain',
+  firstRoom: start,
 
   start: function(pRoom) {
+    
     loadRoom.setAttribute('src', room.loadRoom(pRoom));
-    room.loadArrows();
+
   },
   
   loadRoom: function(pRoom) {
     room.hideArrows();
     currentRoom = rooms[pRoom];
     room.loadArrows();
+
     return currentRoom.img;
   },
 
