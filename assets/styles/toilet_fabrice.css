@@ -163,7 +163,7 @@ button {
   justify-self: center;
   align-self: center;
   visibility: hidden;
-  width: 90%;
+  width: 320px;
   height: 100%;
   padding: 2%;
   border: 3px solid var(--polygon-fill);
@@ -211,4 +211,20 @@ button {
 
 #sound-level {
   font-size: var(--font-size-small);
+}
+
+.action {
+  display: block;
+  border: 2px dashed #fff;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 57%;
+  top: 70%;
+  border-radius: 50%;
+  transition: background-color .5s ease-in-out;
+}
+
+.action:hover {
+  background-color: rgba(255,255,255,30%);
 }
