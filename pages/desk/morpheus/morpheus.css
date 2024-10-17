@@ -12,9 +12,7 @@ body {
     height: 100vh;
     width: 100vw;
    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
     position: relative;
   }
 
@@ -23,11 +21,14 @@ body {
     width: 100%;
     max-width: 800px;
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .morpheus-img{
-    width: 100%; 
-    height: auto; 
+    width: auto; 
+    height: 100vh;
     object-fit: cover;
 
 }
@@ -40,16 +41,16 @@ body {
     height: 50px; 
     top: 78%;
     background-color: transparent;
-    border: 2px solid transparent;
+    border: 2px solid transparent; 
 }
 
 .absolute-power:hover{
 cursor: pointer;}
 
 #red{    
-    left: 22%;
+    left: 31%;
 }
 
 #blue{
-    left: 78%;
+    left: 69%;
 }
