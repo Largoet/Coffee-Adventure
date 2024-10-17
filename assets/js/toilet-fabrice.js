@@ -1,5 +1,5 @@
 import {soundManager} from './sound-manager.js';
-import {room} from './roomManager_fabrice.js'
+import {room} from './roomManager_fabrice.js';
 
 const inventoryWrapperOnClic = {
   isOpen: false,
@@ -19,9 +19,10 @@ window.addEventListener('load', () => {
   soundManager.keydownManager();
   soundManager.clickManager();
 
-  const loadRoom = document.querySelector('#currentRoom');
-  loadRoom.setAttribute('src', room.loadRoom('toiletMain'));
-  room.loadArrows();
+  room.start(room.firstRoom);
+  // const loadRoom = document.querySelector('#currentRoom');
+  // loadRoom.setAttribute('src', room.loadRoom('toiletMain'));
+  // room.loadArrows();
 
   const soundSetting = document.querySelector('.sound-setting-wrapper');
   soundSetting.addEventListener('click', (event) => {
@@ -50,13 +51,7 @@ document.addEventListener('keydown', (event) => {
   if (event.key === "Escape") {
     settingPanel.style.visibility = 'hidden';
   }
-
-  room.keydown(room.loadRoom(event.code));
 })
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   soundManager.play();
-// })
 
 inventoryWrapperOnClic.element.addEventListener('click', () => {
   if (!inventoryWrapperOnClic.isOpen) {
