@@ -1,5 +1,5 @@
-const teams = true;
-const start = 'toiletMain';
+const teams = false;
+const start = 'startMain';
 
 const btnTop = document.getElementById('btnTop');
 const btnRight = document.getElementById('btnRight');
