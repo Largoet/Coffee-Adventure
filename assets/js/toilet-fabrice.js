@@ -20,9 +20,6 @@ window.addEventListener('load', () => {
   soundManager.clickManager();
 
   room.start(room.firstRoom);
-  // const loadRoom = document.querySelector('#currentRoom');
-  // loadRoom.setAttribute('src', room.loadRoom('toiletMain'));
-  // room.loadArrows();
 
   const soundSetting = document.querySelector('.sound-setting-wrapper');
   soundSetting.addEventListener('click', (event) => {

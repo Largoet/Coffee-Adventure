@@ -1,7 +1,7 @@
 /* body */
 
 body {
-  background-image: url("../assets/images/jpg_files/desktop/room_bureau-cofee_adventure.jpg");
+  background-image: url("/assets/images/jpg_files/desktop/room_bureau-cofee_adventure.jpg");
   background-size: cover;
   /* display: flex; */
   justify-content: center;
