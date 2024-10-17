@@ -1,13 +1,10 @@
-// import { soundManager } from "../assets/js/";
-// window.addEventListener("load", () => {
-// soundManager.keydownManager();
-// soundManager.clickManager();
-// });
-
 // VOYAGE VOYAGE
+document.querySelector("#openplacard").addEventListener("click", function () {
+  window.location.href = "/pages/placard-open/placard-open.html";
+});
 
-document.querySelector("#backoutside").addEventListener("click", function () {
-  window.location.href = "/pages/exterieur/exterieur.html";
+document.querySelector("#classroom").addEventListener("click", function () {
+  window.location.href = "/pages/roomjls/roomjls.html";
 });
 
 // affiche et masque l'inventaire//

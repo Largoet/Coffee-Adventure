@@ -1,13 +1,18 @@
-// import { soundManager } from "../assets/js/";
-// window.addEventListener("load", () => {
-// soundManager.keydownManager();
-// soundManager.clickManager();
-// });
+// Fait disparaitre le bouton texte//
+document
+  .getElementById("doyouhaveafiltre")
+  .addEventListener("click", function () {
+    this.style.display = "none";
+  });
 
 // VOYAGE VOYAGE
 
-document.querySelector("#backoutside").addEventListener("click", function () {
-  window.location.href = "/pages/exterieur/exterieur.html";
+document.querySelector("#classroom").addEventListener("click", function () {
+  window.location.href = "pages/roomjl/cafe.html";
+});
+
+document.querySelector("#needfiltre").addEventListener("click", function () {
+  window.location.href = "/pages/placard-closed/placard-closed.html";
 });
 
 // affiche et masque l'inventaire//

@@ -42,7 +42,7 @@ aside {
   margin: auto;
 }
 
-/* ++++++++++++++ BOUTON INVENTAIRE +++++++++++++++++ */
+/* BOUTON INVENTAIRE */
 .inventory-container {
   grid-row: 3;
   display: flex;
@@ -66,7 +66,7 @@ aside {
   height: 100%;
 }
 
-/* +++++++++++++++++++++ MENU INVENTAIRE +++++++++++++++++++++++++*/
+/* MENU INVENTAIRE */
 #inventoryMenu {
   position: absolute;
   top: 0;
@@ -75,7 +75,7 @@ aside {
   height: 95%;
   display: none; /* Cache le menu par défaut */
   width: 300%;
-  z-index: 3;
+  z-index: 100;
 }
 
 #inventoryMenu ul {
@@ -98,7 +98,7 @@ aside {
   display: none;
 }
 
-/* +++++++++++++++++++++ MAIN ++++++++++++++++++++++ */
+/* MAIN */
 main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -107,99 +107,49 @@ main {
 }
 
 main img {
-  grid-column: 1 / 4;
+  grid-column: 2/ 3;
   grid-row: 1 / 4;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: 100vh;
 }
 
 /* BOUTONS */
-#deadbody {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  justify-self: center;
-  background-color: #d49838;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  z-index: 2;
-  height: 100%;
-  width: 100%;
-  opacity: 80%;
-  border-radius: 34px;
-}
 
-/* VERS L'INTERIEUR */
-#inside {
+/* VERS L'EXTERIEUR */
+#back {
   width: 20%; /* Largeur du bouton */
   height: 20%; /* Hauteur du bouton */
-  grid-column: 1;
-  grid-row: 2;
+  grid-column: 2;
+  grid-row: 3;
   background: none;
   border: none;
   align-self: center;
   justify-self: center;
   cursor: pointer;
+  transform: rotate(270deg);
 }
 
-#inside img {
+#back img {
   width: 100%;
   height: 100%;
 }
 
 /* VERS LE CAFE */
-#needcoffee {
-  width: 60px; /* Largeur du bouton */
-  height: 60px; /* Hauteur du bouton */
-  grid-column: 2; /* Colonne 2 */
-  grid-row: 2; /* Ligne 2 */
+
+#divCafe {
+  position: relative;
+  grid-area: 1/2/3/3;
+}
+
+#cafetiere {
+  width: 70%;
+  height: 110%;
+  grid-column: 2;
+  grid-row: 2;
   background-color: transparent;
-  border: none; /* Enlève la bordure par défaut */
+  border: none;
   position: absolute;
-  top: 2%;
-  left: 31%;
+  top: 10%;
+  left: 14%;
   cursor: pointer;
-}
-
-/* SOUNDSYSTEM */
-#setting-panel {
-  grid-area: 2/2/3/3;
-  justify-self: center;
-  align-self: center;
-  visibility: visible;
-  width: 90%;
-  height: 100%;
-  padding: 2%;
-  border: 3px solid var(--polygon-fill);
-  border-radius: 15px;
-  color: white;
-  background-color: var(--primary-color-inventory);
-  z-index: 2;
-}
-
-.panel-setting {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.panel-setting button {
-  width: 60px;
-  height: 30px;
-}
-
-.panel-setting > div {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-direction: row;
-  font-size: var(--font-size-small);
-}
-
-#sound-level {
-  font-size: var(--font-size-small);
 }

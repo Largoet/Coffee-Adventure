@@ -11,7 +11,7 @@ document.getElementById("deadbody").addEventListener("click", function () {
 
 // VOYAGE VOYAGE
 document.querySelector("#needcoffee").addEventListener("click", function () {
-  window.location.href = "cafe.html";
+  window.location.href = "/pages/cafe/cafe.html";
 });
 
 document.querySelector("#inside").addEventListener("click", function () {
