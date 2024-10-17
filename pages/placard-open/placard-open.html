@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/styles/placard-open.css" />
+    <title>Placard ouvert</title>
+  </head>
+  <body>
+    <!-- ASIDE LEFT BARRE -->
+    <aside>
+      <!-- TIMER -->
+      <div class="timer">
+        <span id="minutes">02</span>:<span id="seconds">00</span>
+      </div>
+      <!-- BAG -->
+      <div class="inventory-container">
+        <button type="button" id="inventoryButton">
+          <img
+            src="../../assets/images/png_files/objet-sac-a-dos-cofee_adventure.png"
+            alt="Bouton inventaire"
+          />
+        </button>
+        <!-- INVENTAIRE -->
+        <div id="inventoryMenu" class="hidden">
+          <ul>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-tasse-cofee_adventure.png"
+                alt="mug"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-café-cofee_adventure.png"
+                alt="cafe"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-dirty_water-cofee_adventure.png"
+                alt="eau"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-filtre-cofee_adventure.png"
+                alt="filtre"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <!-- ZONE -->
+      <img
+        src="../../assets//images/jpg_files/kitchen/room_cuisine_01-cofee_adventure.jpg"
+        alt="tu te situe à l'entrée de l'école face à la rue, il y a un corps par terre, il tient un paquet de café dans sa main"
+      />
+      <!-- BOUTON CHANGEMENT DE ZONE -->
+      <button type="button" id="closetheplacard">
+        <img
+          src="../../assets/images/png_files/arrow.svg"
+          alt="bouton fléché pour entrer dans la classroom"
+        />
+      </button>
+      <button type="button" id="makecoffee"></button>
+      <button type="button" id="thefiltre"></button>
+    </main>
+    <script src="/assets/js/placard-open.js"></script>
+  </body>
+</html>

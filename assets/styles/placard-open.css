@@ -114,34 +114,19 @@ main img {
 }
 
 /* BOUTONS */
-#deadbody {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  justify-self: center;
-  background-color: #d49838;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  z-index: 2;
-  height: 100%;
-  width: 100%;
-  opacity: 80%;
-  border-radius: 34px;
-}
 
 /* VERS L'INTERIEUR */
-#inside {
+#closetheplacard {
   width: 20%; /* Largeur du bouton */
   height: 20%; /* Hauteur du bouton */
-  grid-column: 1;
-  grid-row: 2;
+  grid-column: 2;
+  grid-row: 3;
   background: none;
   border: none;
   align-self: center;
   justify-self: center;
   cursor: pointer;
+  transform: rotate(270deg);
 }
 
 #inside img {
@@ -150,68 +135,28 @@ main img {
 }
 
 /* VERS LE CAFE */
-#needcoffee {
-  width: 60px; /* Largeur du bouton */
-  height: 60px; /* Hauteur du bouton */
-  grid-column: 2; /* Colonne 2 */
-  grid-row: 2; /* Ligne 2 */
+#makecoffee {
+  width: 50%;
+  height: 20%;
+  grid-column: 2;
+  grid-row: 2;
   background-color: transparent;
-  border: none; /* Enlève la bordure par défaut */
+  border: none;
   position: absolute;
-  top: 2%;
-  left: 31%;
+  top: -23%;
+  left: 16%;
   cursor: pointer;
 }
 
-/* SOUNDSYSTEM */
-#setting-panel {
-  grid-area: 2/2/3/3;
-  justify-self: center;
-  align-self: center;
-  visibility: hidden;
-  width: 90%;
-  height: 100%;
-  padding: 2%;
-  border: 3px solid var(--polygon-fill);
-  border-radius: 15px;
-  color: white;
-  background-color: var(--primary-color-inventory);
-  z-index: 2;
-}
-
-.panel-setting {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.panel-setting button {
-  width: 60px;
-  height: 30px;
-}
-
-.panel-setting > div {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-direction: row;
-  font-size: var(--font-size-small);
-}
-
-#sound-level {
-  font-size: var(--font-size-small);
-}
-
-.sound-setting-wrapper {
+#thefiltre {
+  width: 20%;
+  height: 20%;
+  grid-column: 2;
+  grid-row: 2;
+  background-color: transparent;
+  border: none;
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  z-index: 2;
-  transition: all .2s ease;
-}
-
-.sound-setting-wrapper:hover {
-  transform: scaleX(150%) scaleY(150%);
+  top: 23%;
+  left: 16%;
+  cursor: pointer;
 }
