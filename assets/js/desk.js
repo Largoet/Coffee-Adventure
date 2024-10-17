@@ -72,7 +72,7 @@ hiddenButton.addEventListener("click", function(){
 });
 
 arrow.addEventListener("click", function(){
-  window.location.href = "/pages/classroom/classroom.html";
+  window.location.href = "/pages/room/roomjl.html";
 })
 
 
@@ -118,3 +118,9 @@ document.querySelector(".nothing-to-see").addEventListener("click", function() {
 })
 
 
+const mugButton = document.querySelector('.mug-hidden-button');
+
+mugButton.addEventListener('click', () => {
+    localStorage.setItem('café', 'true');
+    alert('Valeur café = true a été stockée dans localStorage !');
+});
