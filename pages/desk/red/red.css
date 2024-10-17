@@ -10,7 +10,7 @@ video {
 }
 
 body {
-    cursor: url('/assets/images/png_files/crosshair.webp') 16 16, auto;
+    cursor: url('/assets/images/png_files/Truecrosshair.png'), auto;
     background-color: #f0f0f0;
     height: 100vh; 
     position: relative;
@@ -22,12 +22,12 @@ body {
     border: none;
     opacity: 100%;
     position: absolute;
-    top: 90%;
-    left: 90%;
+    top: 70%;
+    left: 70%;
     width: 20vh;
     height: auto;
 
-    transition: left 3s ease-in-out, top 2s ease-in-out; 
+    transition: left 3s ease-in-out, top 3s ease-in-out; 
 transform: rotate(90);
   }
   .koala-img{
@@ -36,7 +36,7 @@ transform: rotate(90);
   }
 
   .koala-img:hover{
-    cursor:pointer;
+    cursor: url('/assets/images/png_files/Truecrosshair.png'), auto;
   }
 
   #koalahunt{

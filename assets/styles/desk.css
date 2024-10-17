@@ -128,3 +128,32 @@ margin-top: 3vh;
 .colorred{
   background-color: red;
 } 
+
+.container{
+  background-color: #D49838;
+  position: fixed;
+  bottom: 0%;
+}
+
+.backpack{
+  height: 20vh;
+  width: auto; 
+  left: 0%;
+}
+
+.item{
+  height: 20vh;
+  width: 50vw;
+  left: 8%;
+
+}
+
+.sacado{
+  height: 20vh;
+  width: auto;
+}
+
+.button-inventaire:hover{
+  cursor: pointer;
+}
+
