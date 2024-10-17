@@ -1,5 +1,5 @@
 const teams = false;
-const start = 'startMain';
+const start = 'toiletMain';
 
 const btnTop = document.getElementById('btnTop');
 const btnRight = document.getElementById('btnRight');
@@ -11,8 +11,8 @@ let currentRoom = null;
 
 if (teams) {
   loadRoom = document.querySelector('#currentRoom');
-  let benjamin = document.getElementById('currentRoomTeams');
-  benjamin.href = '/pages/roomjl.html';
+  const jeanLouis = document.getElementById('currentRoomTeams');
+  jeanLouis.href = '/pages/room/roomjl.html';
 } else {
   loadRoom = document.querySelector('#currentRoom');
 }
@@ -22,7 +22,6 @@ const roomList = {
     room: {
       toiletMain: {
         img : "/assets/images/jpg_files/toilet/room_toilette_entry-cofee_adventure.jpg",
-        href : "/pages/desktop_fabrice.html",
         direction: ["down", "up"],
         up:'toiletInside',
         down: 'desktopMain'
@@ -31,7 +30,10 @@ const roomList = {
       toiletInside: {
         img : "/assets/images/jpg_files/toilet/room_toilette_inside-cofee_adventure.jpg",
         direction: ["down"],
-        down:'toiletMain'
+        down:'toiletMain',
+        action: {
+          area: {x: '50px', y: '50px', src: ''}
+        }
         },
 
       toilet: {
