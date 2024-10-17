@@ -1,5 +1,5 @@
 const audioRoom = document.querySelector('audio');
-audioRoom.src = '../assets/musique/0Doom_64_Main_Theme.mp3';
+audioRoom.src = '/assets/musique/0Doom_64_Main_Theme.mp3';
 audioRoom.volume = .5;
 const btn = {
   increase : document.querySelector('#set-volume-high'),

@@ -12,7 +12,7 @@ let currentRoom = null;
 if (teams) {
   loadRoom = document.querySelector('#currentRoom');
   let benjamin = document.getElementById('currentRoomTeams');
-  benjamin.href = '../pages/roomjl.html';
+  benjamin.href = '/pages/roomjl.html';
 } else {
   loadRoom = document.querySelector('#currentRoom');
 }
@@ -21,21 +21,21 @@ const roomList = {
   toilet: {
     room: {
       toiletMain: {
-        img : "../assets/images/jpg_files/toilet/room_toilette_entry-cofee_adventure.jpg",
-        href : "../../pages/desktop_fabrice.html",
+        img : "/assets/images/jpg_files/toilet/room_toilette_entry-cofee_adventure.jpg",
+        href : "/pages/desktop_fabrice.html",
         direction: ["down", "up"],
         up:'toiletInside',
         down: 'desktopMain'
       },
 
       toiletInside: {
-        img : "../assets/images/jpg_files/toilet/room_toilette_inside-cofee_adventure.jpg",
+        img : "/assets/images/jpg_files/toilet/room_toilette_inside-cofee_adventure.jpg",
         direction: ["down"],
         down:'toiletMain'
         },
 
       toilet: {
-        img : "../assets/images/jpg_files/toilet/room_toilette_toilet-cofee_adventure.jpg",
+        img : "/assets/images/jpg_files/toilet/room_toilette_toilet-cofee_adventure.jpg",
         direction: ["down"]
       }
     },
@@ -44,7 +44,7 @@ const roomList = {
   desktop: {
     room: {
       desktopMain: {
-        img : "../assets/images/jpg_files/desktop/room_bureau-cofee_adventure.jpg",
+        img : "/assets/images/jpg_files/desktop/room_bureau-cofee_adventure.jpg",
         direction: ["up", "right", "down", "left"],
         up: ["toiletMain"],
         down: ["startMain"],
@@ -57,7 +57,7 @@ const roomList = {
   out: {
     room: {
       outMain: {
-        img : "../assets/images/jpg_files/out/room_out_01-cofee_adventure.jpg",
+        img : "/assets/images/jpg_files/out/room_out_01-cofee_adventure.jpg",
         direction: ["left"],
         left: ["desktopMain"]
       }
@@ -67,7 +67,7 @@ const roomList = {
   start: {
     room: {
       startMain: {
-        img : !teams ? "../assets/images/jpg_files/start/room_start-cofee_adventure.jpg" : "",
+        img : !teams ? "/assets/images/jpg_files/start/room_start-cofee_adventure.jpg" : "",
         direction: ["down"],
         down: ["desktopMain"]
       }
@@ -77,7 +77,7 @@ const roomList = {
   kitchen: {
     room: {
       kitchenMain: {
-        img : "../assets/images/jpg_files/kitchen/room_cuisine_04-cofee_adventure.jpg",
+        img : "/assets/images/jpg_files/kitchen/room_cuisine_04-cofee_adventure.jpg",
         direction: ["right"],
         right: ["desktopMain"]
       }
