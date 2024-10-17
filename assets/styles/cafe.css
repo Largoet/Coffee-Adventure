@@ -57,29 +57,41 @@ aside {
   padding: 0;
   cursor: pointer;
   background-color: #d49838;
+  height: 90%;
+  width: 70%;
 }
 
 #inventoryButton img {
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: 100%;
 }
 
 /* MENU INVENTAIRE */
 #inventoryMenu {
   position: absolute;
-  top: 0; /* Ajuste la position verticale pour l'aligner au centre du bouton */
-  left: 100%; /* Positionne le menu à droite du bouton */
-  background: #333;
-  /* padding: 10px; */
-  border-radius: 5px;
+  top: 0;
+  left: 100%;
+  background-color: transparent;
+  height: 95%;
   display: none; /* Cache le menu par défaut */
-  width: calc(
-    3 * (100vw - 200px) / 3
-  ); /* Calcule la largeur pour occuper trois colonnes de la grille */
+  width: 300%;
+  z-index: 100;
+}
+
+#inventoryMenu ul {
+  display: flex; /* Aligne les items horizontalement */
+  padding: 0;
+  list-style: none;
+  margin: 0;
 }
 
 #inventoryMenu.show {
-  display: block; /* Affiche le menu quand la classe "show" est ajoutée */
+  display: block;
+}
+
+.item {
+  height: 85%;
+  width: 66%;
 }
 
 .hidden {
@@ -91,27 +103,55 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  position: relative;
 }
 
 main img {
-  grid-column: 1 / 4;
+  grid-column: 2/ 3;
   grid-row: 1 / 4;
+  width: auto;
+  height: 100vh;
+}
+
+/* BOUTONS */
+
+/* VERS L'EXTERIEUR */
+#backoutside {
+  width: 20%; /* Largeur du bouton */
+  height: 20%; /* Hauteur du bouton */
+  grid-column: 2;
+  grid-row: 3;
+  background: none;
+  border: none;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  transform: rotate(270deg);
+}
+
+#backoutside img {
   width: 100%;
   height: 100%;
 }
 
-/* BOUTONS */
-#deadbody {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  justify-self: center;
-  background-color: #d49838;
-  color: white;
-  padding: 10px;
+/* VERS LE CAFE */
+
+#divCafe {
+  position: relative;
+  grid-area: 1/2/2/2;
+}
+
+#cafe {
+  width: 20%;
+  height: 55%;
+  grid-column: 2;
+  grid-row: 2;
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
-  z-index: 2;
+  position: absolute;
+  top: 48%;
+  left: 40%;
+  cursor: pointer;
 }
 
 /* SOUNDSYSTEM */
