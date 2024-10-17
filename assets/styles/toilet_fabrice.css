@@ -215,16 +215,41 @@ button {
 
 .action {
   display: block;
-  border: 2px dashed #fff;
-  width: 25px;
-  height: 25px;
+  /* border: 2px dashed #fff; */
+  width: 3%;
+  height: 5%;
   position: absolute;
-  left: 57%;
-  top: 70%;
+  visibility: hidden;
+  left: 57.8%;
+  top: 73%;
   border-radius: 50%;
-  transition: background-color .5s ease-in-out;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
 }
 
 .action:hover {
-  background-color: rgba(255,255,255,30%);
+  border: 2px solid rgba(167, 238, 224, 0.5);
+  background-color: rgba(167, 238, 224, 0.5);
+}
+
+.timer-container {
+  position: absolute;
+  top: 2%;
+  left: 1.2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: gray;
+  width: 17.48%;
+  height: 10.78%;
+  border-radius: 16%;
+  opacity: 0.7;
+}
+
+#timer {
+  margin-top: 3vh;
+}
+
+.colorred {
+  background-color: red;
 }

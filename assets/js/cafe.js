@@ -7,7 +7,7 @@
 // VOYAGE VOYAGE
 
 document.querySelector("#backoutside").addEventListener("click", function () {
-  window.location.href = "exterieur.html";
+  window.location.href = "/pages/exterieur/exterieur.html";
 });
 
 // affiche et masque l'inventaire//
