@@ -7,36 +7,33 @@
 }
 
  body {
-  background-color: black;
-  height: 100%;
-  width: auto;
- 
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: black;
+  height: 100vh;
 }
 
 .game-board{
-  overflow: none;
+  overflow: hidden;
   position: relative;
 
 }
 
 .Starter {
   display: block;
+  object-fit: cover; 
   width: auto; 
   height: 100vh; 
-  object-fit: cover; 
-  position: relative;
 }
 
 .button-design{
-  background-color: #D49838;
   border: none;
   font-family: "Space Mono", monospace;
-  opacity: 80%;
+  opacity: 0.8;
   border-radius: 34px;
   cursor: pointer;
+  background-color: #D49838;
 }
 .tuto-button{
   position: absolute;   
@@ -58,13 +55,13 @@
  }
 
 .arrow-img{
-  width: 31px;
-  transform: rotate(180deg);
+  border: none;
   position: absolute;
+  width: 31px;
   top: 4%;
   left: 48%;
-  border: none;
   padding: 0;
+  transform: rotate(180deg);
   border-color: black;
   background-color: black;
 }
@@ -74,7 +71,6 @@
 }
 
 br {
-  display: block;
   margin: 10px 0;
 }
 
@@ -86,8 +82,6 @@ br {
   transform: translate(-50%, -50%);
   padding: 2vh;
   opacity: 0%;
-  background-color: transparent;
-  border: 2px solid transparent;
 }
 
 .nothing-to-see{
@@ -95,8 +89,7 @@ br {
   top: 23%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 4vh;
-  padding-left: 20%;
+  padding: 4vh 0 4vh 20%;
   background-color: transparent;
   color: transparent;
   border: none;
@@ -115,11 +108,11 @@ br {
 }
 
 .timer-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   position: absolute;
   top: 0%;
-  display: flex;
- flex-direction: row;
- justify-content: space-evenly;
  background-color: gray;
  width: 17.48%;
  height: 10.78%;
@@ -134,4 +127,4 @@ margin-top: 3vh;
 
 .colorred{
   background-color: red;
-}
+} 
