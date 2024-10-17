@@ -3,17 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/styles/exterieur.css" />
-    <title>Exterieur</title>
+    <link rel="stylesheet" href="/assets/styles/cafe.css" />
+    <title>cafe</title>
   </head>
   <body>
-    <!-- ASIDE LEFT BARRE -->
     <aside>
-      <!-- TIMER -->
       <div class="timer">
         <span id="minutes">02</span>:<span id="seconds">00</span>
       </div>
-      <!-- BAG -->
       <div class="inventory-container">
         <button type="button" id="inventoryButton">
           <img
@@ -21,7 +18,6 @@
             alt="Bouton inventaire"
           />
         </button>
-        <!-- INVENTAIRE -->
         <div id="inventoryMenu" class="hidden">
           <ul>
             <li>
@@ -57,23 +53,19 @@
       </div>
     </aside>
     <main>
-      <!-- ZONE -->
       <img
-        src="../assets/images/jpg_files/out/room_out_01-cofee_adventure.jpg"
-        alt="tu te situe à l'entrée de l'école face à la rue, il y a un corps par terre, il tient un paquet de café dans sa main"
+        src="../assets/images/jpg_files/out/room_out_02-cofee_adventure.jpg"
+        alt="tu es face à un paquet de cafe, ramasse le."
       />
-      <!-- BOUTON TXT-->
-      <button type="button" id="deadbody">
-        Il serait judicieux que je prenne le temps de le ramasser... un jour.
-      </button>
-      <!-- BOUTON CHANGEMENT DE ZONE -->
-      <button type="button" id="inside">
+      <button type="button" id="backoutside">
         <img
           src="../assets/images/png_files/arrow.svg"
-          alt="bouton fléché pour entrer dans la classroom"
+          alt="bouton fleche pour revenir face à la rue"
         />
       </button>
-      <button type="button" id="needcoffee"></button>
+      <div id="divCafe">
+        <button type="button" id="cafe"></button>
+      </div>
       <!-- =================== SOUND SETTING =================== -->
       <!-- <section id="setting-panel">
         <section class="panel-setting">
@@ -90,6 +82,6 @@
         </section>
       </section> -->
     </main>
-    <script src="/assets/js/exterieur.js"></script>
+    <script src="/assets/js/cafe.js"></script>
   </body>
 </html>
