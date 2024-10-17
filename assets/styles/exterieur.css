@@ -168,7 +168,7 @@ main img {
   grid-area: 2/2/3/3;
   justify-self: center;
   align-self: center;
-  visibility: visible;
+  visibility: hidden;
   width: 90%;
   height: 100%;
   padding: 2%;
@@ -202,4 +202,16 @@ main img {
 
 #sound-level {
   font-size: var(--font-size-small);
+}
+
+.sound-setting-wrapper {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  transition: all .2s ease;
+}
+
+.sound-setting-wrapper:hover {
+  transform: scaleX(150%) scaleY(150%);
 }

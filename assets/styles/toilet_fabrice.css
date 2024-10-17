@@ -163,7 +163,7 @@ button {
   justify-self: center;
   align-self: center;
   visibility: hidden;
-  width: 90%;
+  width: 320px;
   height: 100%;
   padding: 2%;
   border: 3px solid var(--polygon-fill);
@@ -211,4 +211,45 @@ button {
 
 #sound-level {
   font-size: var(--font-size-small);
+}
+
+.action {
+  display: block;
+  /* border: 2px dashed #fff; */
+  width: 3%;
+  height: 5%;
+  position: absolute;
+  visibility: hidden;
+  left: 57.8%;
+  top: 73%;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
+}
+
+.action:hover {
+  border: 2px solid rgba(167, 238, 224, 0.5);
+  background-color: rgba(167, 238, 224, 0.5);
+}
+
+.timer-container {
+  position: absolute;
+  top: 2%;
+  left: 1.2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: gray;
+  width: 17.48%;
+  height: 10.78%;
+  border-radius: 16%;
+  opacity: 0.7;
+}
+
+#timer {
+  margin-top: 3vh;
+}
+
+.colorred {
+  background-color: red;
 }
