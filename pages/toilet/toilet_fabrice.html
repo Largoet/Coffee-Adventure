@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cofee adventure | Wild Code School</title>
     <link rel="stylesheet" href="/assets/styles/toilet_fabrice.css">
+    <!-- <link rel="stylesheet" href="/assets/js/Share/minuteur/minuteur.css"> -->
 </head>
 <body>
   <main>
     <!-- =================== ASIDE =================== -->
     <aside>
       <!-- =================== Chrono =================== -->
-      <button class="btn-chrono"><span id="minutes">04</span>:<span id="secondes">59</span></button>
+      <!-- <button class="btn-chrono"><span id="minutes">04</span>:<span id="secondes">59</span></button> -->
+      <section class="timer-container">
+        <p id="timer">
+          <span>0</span>
+          <span id="timer-min">4</span>
+          <span>:</span>
+          <span id="timer-sec-dizaine">5</span>
+          <span id="timer-sec-unites">9</span>
+        </p>
+      </section>
 
       <!-- =================== Bag pack =================== -->
       <img class="inventory-bag" src="/assets/images/png_files/objet-sac-a-dos-cofee_adventure.png" alt="Inventaire.">
@@ -71,6 +81,11 @@
       <img width="20" src="https://img.icons8.com/?size=100&id=41563&format=png&color=FFFFFF" alt="Paramètres du jeu.">
       <audio control src=""></audio>
     </section>
+
+    <audio id="timer-alert" loop>
+      <source src="/assets/musique/sonicdrown.mp3" type="audio/mp3">
+      Votre navigateur ne supporte pas l'audio HTML5.
+    </audio>
     
   </main>
 

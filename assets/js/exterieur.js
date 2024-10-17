@@ -1,8 +1,8 @@
-// import { soundManager } from "../assets/js/";
-// window.addEventListener("load", () => {
-// soundManager.keydownManager();
-// soundManager.clickManager();
-// });
+import { soundManager } from "sound-manager";
+window.addEventListener("load", () => {
+soundManager.keydownManager();
+soundManager.clickManager();
+});
 
 // Fait disparaitre le bouton texte//
 document.getElementById("deadbody").addEventListener("click", function () {
@@ -11,7 +11,7 @@ document.getElementById("deadbody").addEventListener("click", function () {
 
 // VOYAGE VOYAGE
 document.querySelector("#needcoffee").addEventListener("click", function () {
-  window.location.href = "cafe.html";
+  window.location.href = "/pages/cafe/cafe.html";
 });
 
 document.querySelector("#inside").addEventListener("click", function () {
