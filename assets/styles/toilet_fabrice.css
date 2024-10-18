@@ -229,27 +229,27 @@ button {
 
 .action:hover {
   border: 2px solid rgba(167, 238, 224, 0.5);
-  background-color: rgba(167, 238, 224, 0.5);
+  background-color: rgba(255,255,255,30%);
 }
 
-.timer-container {
-  position: absolute;
-  top: 2%;
-  left: 1.2%;
+.timer-container{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  background-color: gray;
-  width: 17.48%;
-  height: 10.78%;
-  border-radius: 16%;
-  opacity: 0.7;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0%;
+ background-color: gray;
+ width: 17.48%;
+ height: 10.78%;
+ border-radius: 16%;  
+ opacity: 0.7;
 }
 
-#timer {
-  margin-top: 3vh;
+#timer{
+margin-top: 3vh;
+
 }
 
-.colorred {
+.colorred{
   background-color: red;
-}
+} 

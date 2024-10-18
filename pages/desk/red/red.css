@@ -44,3 +44,26 @@ transform: rotate(90);
     top: 0%;
     left: 40%;
   }
+
+  .timer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0%;
+   background-color: gray;
+   width: 17.48%;
+   height: 10.78%;
+   border-radius: 16%;  
+   opacity: 0.7;
+  }
+  
+  #timer{
+  margin-top: 3vh;
+  
+  }
+  
+  .colorred{
+    background-color: red;
+  } 
+  
