@@ -1,3 +1,24 @@
+const coffeMachine = document.querySelector('#cafetiere');
+
+if (coffeMachine) { 
+  coffeMachine.addEventListener('click', () => {
+    // Correction de la parenthèse et de l'espace après 'tasseCafe'
+    if (sessionStorage.getItem('tasseCafe') !== 'true' && 
+        sessionStorage.getItem('filtre') == 'true' && 
+        sessionStorage.getItem('eau') == 'true' && 
+        sessionStorage.getItem('cafe') == 'true') {
+      
+      sessionStorage.setItem('tasseCafe', 'true');
+      alert(`Voila enfin un bon café`);
+    } else {
+      alert(`Si je veux me refaire un café je vais avoir besoin de plus d'ingrédients`);
+    }
+  });
+} else {
+  console.error("Le bouton #coffeMachine n'existe pas dans le DOM.");
+}
+
+
 let dizaine = sessionStorage.getItem('dizaine') ? parseInt(sessionStorage.getItem('dizaine')) : 5;
 let unites = sessionStorage.getItem('unites') ? parseInt(sessionStorage.getItem('unites')) : 9;
 let minutes = sessionStorage.getItem('minutes') ? parseInt(sessionStorage.getItem('minutes')) : 4;
