@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
 
   room.start(room.firstRoom);
 
-  // startTimer();
+  startTimer();
 
   const soundSetting = document.querySelector('.sound-setting-wrapper');
   soundSetting.addEventListener('click', (event) => {
