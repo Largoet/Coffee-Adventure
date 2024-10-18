@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cofee adventure | Wild Code School</title>
+    <link rel="stylesheet" href="/assets/styles/toilet_fabrice.css">
+    <!-- <link rel="stylesheet" href="/assets/js/Share/minuteur/minuteur.css"> -->
+</head>
+<body>
+  <main>
+    <!-- =================== ASIDE =================== -->
+    <aside>
+      <!-- =================== Chrono =================== -->
+      <!-- <button class="btn-chrono"><span id="minutes">04</span>:<span id="secondes">59</span></button> -->
+      <section class="timer-container">
+        <p id="timer">
+          <span>0</span>
+          <span id="timer-min">4</span>
+          <span>:</span>
+          <span id="timer-sec-dizaine">5</span>
+          <span id="timer-sec-unites">9</span>
+        </p>
+      </section>
+
+      <!-- =================== Bag pack =================== -->
+      <img class="inventory-bag" src="/assets/images/png_files/objet-sac-a-dos-cofee_adventure.png" alt="Inventaire.">
+      <div class="bg-inventory"></div>
+    </aside>
+
+    <!-- =================== GAME AREA =================== -->
+    <section class="game-area">
+      <!-- =================== ROOM =================== -->
+      <img id="currentRoom" class="front-toilet" src=""
+        alt="">
+
+      <!-- =================== ARROWS =================== -->
+      <!-- =================== Top =================== -->
+      <div id="btnTop" class="btn-arrows btn-top">
+        <a href="#" alt="Allez en face."><img class="img-btn-arrows" src="/assets/images/png_files/arrow.svg" alt=""></a>
+      </div>
+
+      <!-- =================== Right =================== -->
+      <div id="btnRight" class="btn-arrows btn-right">
+        <a href="#" alt="Aller à droite"><img class="img-btn-arrows" src="/assets/images/png_files/arrow.svg" alt=""></a>
+      </div>
+
+      <!-- =================== Bottom =================== -->
+      <div id="btnBottom" class="btn-arrows btn-bottom">
+        <a id="currentRoomTeams" href="#" alt="Retour en arrière"><img class="img-btn-arrows" src="/assets/images/png_files/arrow.svg" alt=""></a>
+      </div>
+
+      <!-- =================== Left =================== -->
+      <div id="btnLeft" class="btn-arrows btn-left">
+        <a href="#" alt=""><img class="img-btn-arrows" src="/assets/images/png_files/arrow.svg" alt=""></a>
+      </div>
+
+      <!-- =================== SOUND SETTING =================== -->
+      <section id="setting-panel">
+        <section class="panel-setting">
+          <div>
+            <h3>Paramètres de la musique</h3>
+            <button id="close">&times;</button>
+          </div>
+          <p id="sound-level"></p>
+          <section>
+            <button id="set-volume-low">-</button>
+            <button id="set-volume-high">+</button>
+          </section>
+          <button id="set-pause-music">Pause</button>
+        </section>
+      </section>
+
+      <section id="action" class="action">
+        <div></div>
+      </section>
+    </section>
+    
+    <!-- =================== Audio =================== -->
+    <section class="sound-setting-wrapper">
+      <img width="20" src="https://img.icons8.com/?size=100&id=41563&format=png&color=FFFFFF" alt="Paramètres du jeu.">
+      <audio control src=""></audio>
+    </section>
+
+    <audio id="timer-alert" loop>
+      <source src="/assets/musique/sonicdrown.mp3" type="audio/mp3">
+      Votre navigateur ne supporte pas l'audio HTML5.
+    </audio>
+    
+  </main>
+
+  <script type="module" src="/assets/js/toilet-fabrice.js"></script>
+</body>
+</html>

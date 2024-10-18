@@ -1,0 +1,47 @@
+.inventory-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.inventory-icon {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.inventory-menu {
+  display: none; /* Menu caché par défaut */
+  flex-direction: column;
+  background-color: lightgray;
+  padding: 20px;
+  margin-left: 10px;
+  min-width: 200px;
+}
+
+.inventory-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Grille d'objets */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.item {
+  background-color: coral;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+#inventory-button {
+  cursor: pointer;
+}
+
+#add-item-button {
+  cursor: pointer;
+  margin-bottom: 10px;
+}

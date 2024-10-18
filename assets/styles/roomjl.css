@@ -1,0 +1,96 @@
+/* body */
+
+body {
+  background-image: url("/assets/images/jpg_files/desktop/room_bureau-cofee_adventure.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+body .image-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* image cardinaux */
+
+/* boutons*/
+
+div div {
+  height: 20%;
+  width: 20%;
+  border: none;
+}
+
+button {
+  border: none;
+
+  cursor: pointer;
+  background: none;
+  /* background-color: chartreuse; */
+}
+
+button img {
+}
+
+/* insertion images */
+
+/* Arrow position */
+
+.up-arrow,
+.right-arrow,
+.down-arrow,
+.left-arrow {
+  background: none;
+  border: none;
+}
+
+.nord {
+  position: absolute;
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+  top: 15%;
+  left: 40%;
+}
+
+.est {
+  position: absolute;
+  grid-column: 3 / 3;
+  grid-row: 2 / 2;
+  top: 40%;
+  left: 75%;
+}
+
+.sud {
+  position: absolute;
+  grid-column: 2 / 2;
+  grid-row: 3 / 3;
+  top: 75%;
+  left: 40%;
+}
+
+.ouest {
+  position: absolute;
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
+  top: 40%;
+  left: 10%;
+}
+
+/* rotation des images */
+.up-arrow {
+  transform: rotate(90deg);
+}
+
+.right-arrow {
+  transform: rotate(180deg);
+}
+
+.down-arrow {
+  transform: rotate(270deg);
+}

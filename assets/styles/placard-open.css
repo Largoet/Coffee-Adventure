@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body,
+html {
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 100vh;
+  background-color: black;
+}
+
+/* ASIDE */
+aside {
+  background: #000;
+  display: grid;
+  grid-template-rows: 0.25fr 1fr 0.25fr;
+  height: 100vh;
+  padding: 0;
+}
+
+/* TIMER */
+.timer {
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  color: white;
+  width: 90px;
+  height: 50px;
+  margin: auto;
+}
+
+/* ++++++++++++++ BOUTON INVENTAIRE +++++++++++++++++ */
+.inventory-container {
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Le conteneur devient le parent de référence pour le positionnement absolu du menu */
+}
+
+#inventoryButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: #d49838;
+  height: 90%;
+  width: 70%;
+}
+
+#inventoryButton img {
+  width: 100%;
+  height: 100%;
+}
+
+/* +++++++++++++++++++++ MENU INVENTAIRE +++++++++++++++++++++++++*/
+#inventoryMenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: transparent;
+  height: 95%;
+  display: none; /* Cache le menu par défaut */
+  width: 300%;
+  z-index: 3;
+}
+
+#inventoryMenu ul {
+  display: flex; /* Aligne les items horizontalement */
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+#inventoryMenu.show {
+  display: block;
+}
+
+.item {
+  height: 85%;
+  width: 66%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* +++++++++++++++++++++ MAIN ++++++++++++++++++++++ */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  position: relative;
+}
+
+main img {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+  width: 100%;
+  height: 100%;
+}
+
+/* BOUTONS */
+
+/* VERS L'INTERIEUR */
+#closetheplacard {
+  width: 20%; /* Largeur du bouton */
+  height: 20%; /* Hauteur du bouton */
+  grid-column: 2;
+  grid-row: 3;
+  background: none;
+  border: none;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  transform: rotate(270deg);
+}
+
+#inside img {
+  width: 100%;
+  height: 100%;
+}
+
+/* VERS LE CAFE */
+#makecoffee {
+  width: 50%;
+  height: 20%;
+  grid-column: 2;
+  grid-row: 2;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: -23%;
+  left: 16%;
+  cursor: pointer;
+}
+
+#thefiltre {
+  width: 20%;
+  height: 20%;
+  grid-column: 2;
+  grid-row: 2;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 23%;
+  left: 16%;
+  cursor: pointer;
+}

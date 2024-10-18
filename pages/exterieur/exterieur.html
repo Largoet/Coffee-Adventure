@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/styles/exterieur.css" />
+    <title>Exterieur</title>
+  </head>
+  <body>
+    <!-- ASIDE LEFT BARRE -->
+    <aside>
+      <!-- TIMER -->
+      <div class="timer">
+        <span id="minutes">02</span>:<span id="seconds">00</span>
+      </div>
+      <!-- BAG -->
+      <div class="inventory-container">
+        <button type="button" id="inventoryButton">
+          <img
+            src="../../assets/images/png_files/objet-sac-a-dos-cofee_adventure.png"
+            alt="Bouton inventaire"
+          />
+        </button>
+        <!-- INVENTAIRE -->
+        <div id="inventoryMenu" class="hidden">
+          <ul>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-tasse-cofee_adventure.png"
+                alt="mug"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-café-cofee_adventure.png"
+                alt="cafe"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-dirty_water-cofee_adventure.png"
+                alt="eau"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-filtre-cofee_adventure.png"
+                alt="filtre"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <!-- ZONE -->
+      <img
+        src="../../assets/images/jpg_files/out/room_out_01-cofee_adventure.jpg"
+        alt="tu te situe à l'entrée de l'école face à la rue, il y a un corps par terre, il tient un paquet de café dans sa main"
+      />
+      <!-- BOUTON TXT-->
+      <button type="button" id="deadbody">
+        Il serait judicieux que je prenne le temps de le ramasser... un jour.
+      </button>
+      <!-- BOUTON CHANGEMENT DE ZONE -->
+      <button type="button" id="inside">
+        <img
+          src="../../assets/images/png_files/arrow.svg"
+          alt="bouton fléché pour entrer dans la classroom"
+        />
+      </button>
+      <button type="button" id="needcoffee"></button>
+      
+    </main>
+    <!-- =================== SOUND SETTING =================== -->
+    <section id="setting-panel">
+      <section class="panel-setting">
+        <div>
+          <h3>Paramètres de la musique</h3>
+          <button id="close">&times;</button>
+        </div>
+        <p id="sound-level"></p>
+        <section>
+          <button id="set-volume-low">-</button>
+          <button id="set-volume-high">+</button>
+        </section>
+        <button id="set-pause-music">Pause</button>
+      </section>
+    </section>
+    
+    <!-- =================== Audio =================== -->
+    <section class="sound-setting-wrapper">
+      <img width="20" src="https://img.icons8.com/?size=100&id=41563&format=png&color=FFFFFF" alt="Paramètres du jeu.">
+      <audio control src=""></audio>
+    </section>
+    <script src="/assets/js/exterieur.js"></script>
+  </body>
+</html>
