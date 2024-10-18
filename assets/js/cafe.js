@@ -4,7 +4,25 @@
 // soundManager.clickManager();
 // });
 
+
+const cafein = document.querySelector('#cafe');
+
+if (cafein) { 
+  cafein.addEventListener('click', () => {
+    if (sessionStorage.getItem('cafe') !== 'true') {
+      sessionStorage.setItem('cafe', 'true');
+      alert(`Aucun cadavre ne m'empêchera de récuperer ce qu'il me revient de droit.`);
+    } else {
+      alert(`Il n'avait même pas un bijoux à revendre sur lui... décevant.`);
+    }
+  });
+} else {
+  console.error("Le bouton #thefiltre n'existe pas dans le DOM.");
+}
+
+
 //MINUTEUR MA GEULE 
+
 let dizaine = sessionStorage.getItem('dizaine') ? parseInt(sessionStorage.getItem('dizaine')) : 5;
 let unites = sessionStorage.getItem('unites') ? parseInt(sessionStorage.getItem('unites')) : 9;
 let minutes = sessionStorage.getItem('minutes') ? parseInt(sessionStorage.getItem('minutes')) : 4;
