@@ -27,9 +27,9 @@ div div {
   border: none;
 }
 
-aside button {
+button {
   border: none;
-  padding: 0;
+
   cursor: pointer;
   background: none;
   /* background-color: chartreuse; */
