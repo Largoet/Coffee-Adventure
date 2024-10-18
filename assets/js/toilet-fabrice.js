@@ -1,6 +1,22 @@
 import {soundManager} from './sound-manager.js';
 import {room} from './roomManager_fabrice.js';
 
+const eau = document.querySelector('#aqua');
+
+if (eau) { 
+  eau.addEventListener('click', () => {
+    if (sessionStorage.getItem('eau') !== 'true') {
+      sessionStorage.setItem('eau', 'true');
+      alert(`Cette eau souillée l'est moins que la dernière fois, plutôt bon signe.`);
+    } else {
+      alert(`J'en raffole pas à ce point`);
+    }
+  });
+} else {
+  console.error("Le bouton #thefiltre n'existe pas dans le DOM.");
+}
+
+
 // Début timer
 
 let dizaine = sessionStorage.getItem('dizaine') ? parseInt(sessionStorage.getItem('dizaine')) : 5;
