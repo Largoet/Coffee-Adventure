@@ -1,7 +1,7 @@
 
 let dizaine = sessionStorage.getItem('dizaine') ? parseInt(sessionStorage.getItem('dizaine')) : 5;
 let unites = sessionStorage.getItem('unites') ? parseInt(sessionStorage.getItem('unites')) : 9;
-let minutes = sessionStorage.getItem('minutes') ? parseInt(sessionStorage.getItem('minutes')) : 4;
+let minutes = sessionStorage.getItem('minutes') ? parseInt(sessionStorage.getItem('minutes')) : 1;
 
 const styleTimer = document.querySelector(".timer-container")
 const timerMinutes = document.querySelector("#timer-min");
@@ -144,6 +144,6 @@ mugButton.addEventListener('click', () => {
     sessionStorage.setItem('tasse', 'true');
     alert('Ma tasse est vide... je ferais mieux de me recharger et vite !');}
     if (sessionStorage.getItem("tasseCafe") !== null) {
-            window.location.href = 'https://www.shutterstock.com/shutterstock/photos/2415929187/display_1500/stock-vector-pixel-art-bit-you-win-text-with-one-big-winner-golden-cup-on-red-background-2415929187.jpg'
+            window.location.href = 'https://th.bing.com/th/id/R.2e00e495a9c7dc438a9ab7ac6f3c0776?rik=slP2tY4DIpi8tg&riu=http%3a%2f%2fweknowyourdreams.com%2fimages%2fvictory%2fvictory-10.jpg&ehk=y48YOGvAkviLyZdpyOoR%2bFCD8b3Y9ABQ%2fuAdYAIuJFE%3d&risl=1&pid=ImgRaw&r=0'
     }
 });
