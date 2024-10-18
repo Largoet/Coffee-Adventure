@@ -1,7 +1,7 @@
 
-let dizaine = 5;
-let unites = 9  ;
-let minutes = 4;
+let dizaine = sessionStorage.getItem('dizaine') ? parseInt(sessionStorage.getItem('dizaine')) : 5;
+let unites = sessionStorage.getItem('unites') ? parseInt(sessionStorage.getItem('unites')) : 9;
+let minutes = sessionStorage.getItem('minutes') ? parseInt(sessionStorage.getItem('minutes')) : 4;
 
 const styleTimer = document.querySelector(".timer-container")
 const timerMinutes = document.querySelector("#timer-min");
@@ -43,6 +43,9 @@ function startTimer() {
     } else if (minutes == 0 && dizaine == 0 && unites == 0) {
       window.location.href = "https://img.freepik.com/vecteurs-libre/game-over-effet-glitch_225004-661.jpg?t=st=1729001229~exp=1729004829~hmac=ca5442e3bdf4d27878606bdc20748629afa9c20f7661ab45f4a5c3d2f664dc8c&w=1380";
     }
+    sessionStorage.setItem('minutes', minutes);
+    sessionStorage.setItem('dizaine', dizaine);
+    sessionStorage.setItem('unites', unites);
   }, 1000);
 }
 
@@ -55,8 +58,22 @@ document.addEventListener("DOMContentLoaded", function() {
   const hiddenButton = document.querySelector('.hidden-button');
   const arrow = document.querySelector('.arrow-img')
 
+  if (sessionStorage.getItem("button") !== null) {
+    sessionStorage.setItem('button', 'true');
+    button.style.display = 'none';
+    hiddenButton.style.display = 'block';
+    const music = document.getElementById("doom-music");
+    music.play();
+    startTimer();
+    hiddenButton.style.display = 'none';
+    arrow.style.display = 'block';
+    const targetButton = document.querySelector('.nothing-to-see');
+    targetButton.disabled = false; 
+    targetButton.style.display = "inline-block"; 
+  }
 
 button.addEventListener("click", function() {
+  sessionStorage.setItem('button', 'true');
   button.style.display = 'none';
   hiddenButton.style.display = 'block';
   const music = document.getElementById("doom-music");
@@ -64,6 +81,8 @@ button.addEventListener("click", function() {
   startTimer();
 
 });
+
+
 
 
 hiddenButton.addEventListener("click", function(){
@@ -121,6 +140,10 @@ document.querySelector(".nothing-to-see").addEventListener("click", function() {
 const mugButton = document.querySelector('.mug-hidden-button');
 
 mugButton.addEventListener('click', () => {
-    localStorage.setItem('café', 'true');
-    alert('Valeur café = true a été stockée dans localStorage !');
+  if (sessionStorage.getItem('tasse') !== 'true' ) {
+    sessionStorage.setItem('tasse', 'true');
+    alert('Ma tasse est vide... je ferais mieux de me recharger et vite !');}
+    if (sessionStorage.getItem("tasseCafe") !== null) {
+            window.location.href = 'https://www.shutterstock.com/shutterstock/photos/2415929187/display_1500/stock-vector-pixel-art-bit-you-win-text-with-one-big-winner-golden-cup-on-red-background-2415929187.jpg'
+    }
 });

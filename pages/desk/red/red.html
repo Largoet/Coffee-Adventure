@@ -11,9 +11,33 @@
 <body>
   <section class="game-board-container">
   <video autoplay  loop>
-    <source src= "/assets/musique/rick.mp4" type="video/mp4">
- 
+    <source src= "/assets/musique/rick.mp4" type="video/mp4"> 
   </video>
+
+    <!-- Timer alert sound -->
+    <audio id="timer-alert" loop>
+      <source src="/assets/musique/sonicdrown.mp3" type="audio/mp3">
+      Votre navigateur ne supporte pas l'audio HTML5.
+  </audio>
+
+  <!-- Timer section -->
+  <section class="timer-container">
+      <p id="timer">
+          <span>0</span>
+          <span id="timer-min">4</span>
+          <span>:</span>
+          <span id="timer-sec-dizaine">5</span>
+          <span id="timer-sec-unites">9</span>
+      </p>
+  </section>
+
+  <!-- Morpheus choice section -->
+  <section class="container">
+      <img src="/assets/images/jpg_files/start/blueredmorpheus.jpg" class="morpheus-img" alt="Morpheus gives you a choice, blue or red pill?">
+      <button type="button" id="red" class="absolute-power" alt="red pill"></button>
+      <button type="button" id="blue" class="absolute-power" alt="blue pill"></button>
+  </section>
+
 
 
 <button id="koalahunt" type="button"><strong > It's koala shooting time ! </strong></button> 
