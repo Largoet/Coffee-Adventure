@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+video {
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+}
+
+body {
+    cursor: url('/assets/images/png_files/Truecrosshair.png'), auto;
+    background-color: #f0f0f0;
+    height: 100vh; 
+    position: relative;
+    overflow: hidden; 
+  }
+
+  #koalatak{
+    background-color: transparent;
+    border: none;
+    opacity: 100%;
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    width: 20vh;
+    height: auto;
+
+    transition: left 3s ease-in-out, top 3s ease-in-out; 
+transform: rotate(90);
+  }
+  .koala-img{
+    width: 20vh;
+    height: auto;
+  }
+
+  .koala-img:hover{
+    cursor: url('/assets/images/png_files/Truecrosshair.png'), auto;
+  }
+
+  #koalahunt{
+    position: absolute;
+    top: 0%;
+    left: 40%;
+  }

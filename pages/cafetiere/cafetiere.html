@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\assets\styles\cafetiere.css" />
+    <title>cafetiere</title>
+  </head>
+  <body>
+    <aside>
+      <div class="timer">
+        <span id="minutes">02</span>:<span id="seconds">00</span>
+      </div>
+      <div class="inventory-container">
+        <button type="button" id="inventoryButton">
+          <img
+            src="../../assets/images/png_files/objet-sac-a-dos-cofee_adventure.png"
+            alt="Bouton inventaire"
+          />
+        </button>
+        <div id="inventoryMenu" class="hidden">
+          <ul>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-tasse-cofee_adventure.png"
+                alt="mug"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-café-cofee_adventure.png"
+                alt="cafe"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-dirty_water-cofee_adventure.png"
+                alt="eau"
+              />
+            </li>
+            <li>
+              <img
+                class="item"
+                src="../../assets/images/png_files/objet-filtre-cofee_adventure.png"
+                alt="filtre"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <img
+        src="../../assets/images/jpg_files/kitchen/room_cuisine_03-cofee_adventure.jpg"
+        alt="tu es face à la cafetière, si tu as tout ce qu'il te faut, prépare ton café."
+      />
+      <button type="button" id="back">
+        <img
+          src="../../assets/images/png_files/arrow.svg"
+          alt="bouton fleche pour revenir face aux placards"
+        />
+      </button>
+      <div id="divCafe">
+        <button type="button" id="cafetiere"></button>
+      </div>
+    </main>
+    <script src="\assets\js\cafetiere.js"></script>
+  </body>
+</html>
