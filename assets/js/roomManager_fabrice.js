@@ -1,5 +1,5 @@
-const teams = false;
-const start = 'startMain';
+const teams = true;
+const start = 'toiletMain';
 
 const btnTop = document.getElementById('btnTop');
 const btnRight = document.getElementById('btnRight');
@@ -68,7 +68,7 @@ const roomList = {
   start: {
     room: {
       startMain: {
-        img : !teams ? "/assets/images/jpg_files/start/room_start-cofee_adventure.jpg" : "",
+        img : "/assets/images/jpg_files/start/room_start-cofee_adventure.jpg",
         direction: ["down"],
         down: ["desktopMain"]
       }
