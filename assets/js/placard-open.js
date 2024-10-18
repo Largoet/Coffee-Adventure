@@ -1,8 +1,81 @@
+const filtreCafe = document.querySelector('#thefiltre');
+
+if (filtreCafe) { 
+  filtreCafe.addEventListener('click', () => {
+    if (sessionStorage.getItem('filtre') !== 'true') {
+      sessionStorage.setItem('filtre', 'true');
+      alert(`Je vais peut-être y perdre quelques précieux nutriments trouvés dans l'eau mais cette fois-ci je ferais mieux de prendre un filtre`);
+    } else {
+      alert(`Un seul filtre me suffira`);
+    }
+  });
+} else {
+  console.error("Le bouton #thefiltre n'existe pas dans le DOM.");
+}
+
+
+let dizaine = sessionStorage.getItem('dizaine') ? parseInt(sessionStorage.getItem('dizaine')) : 5;
+let unites = sessionStorage.getItem('unites') ? parseInt(sessionStorage.getItem('unites')) : 9;
+let minutes = sessionStorage.getItem('minutes') ? parseInt(sessionStorage.getItem('minutes')) : 4;
+
+const styleTimer = document.querySelector(".timer-container")
+const timerMinutes = document.querySelector("#timer-min");
+const timerSecondsUnites = document.querySelector("#timer-sec-unites");
+const timerSecondsDizaine = document.querySelector("#timer-sec-dizaine");
+
+timerMinutes.innerHTML = minutes;
+timerSecondsDizaine.innerHTML = dizaine;
+timerSecondsUnites.innerHTML = unites;
+
+function startTimer() {
+  setInterval(function() {
+    unites--;
+    if ( unites >= 0 ){
+    timerSecondsUnites.innerHTML = unites;}
+
+    if (unites == -1 ) {
+      unites = 9;
+      dizaine--;
+      timerSecondsDizaine.innerHTML = dizaine;
+      timerSecondsUnites.innerHTML = unites;
+      } else if (minutes > 0 && dizaine == 0 && unites == 0) {
+      minutes--;
+      dizaine = 5;
+      unites = 9;
+      timerSecondsUnites.innerHTML = unites;
+      timerSecondsDizaine.innerHTML = dizaine;
+      timerMinutes.innerHTML = minutes;
+      if (minutes == 0) {
+       
+        setInterval(() => {
+          styleTimer.classList.toggle('colorred');
+          if (minutes == 0 && dizaine == 1 && unites == 3 ){
+            const alertSound = document.getElementById("timer-alert");
+            alertSound.play();
+           }
+        }, 2000);
+      }
+    } else if (minutes == 0 && dizaine == 0 && unites == 0) {
+      window.location.href = "https://img.freepik.com/vecteurs-libre/game-over-effet-glitch_225004-661.jpg?t=st=1729001229~exp=1729004829~hmac=ca5442e3bdf4d27878606bdc20748629afa9c20f7661ab45f4a5c3d2f664dc8c&w=1380";
+    }
+    sessionStorage.setItem('minutes', minutes);
+    sessionStorage.setItem('dizaine', dizaine);
+    sessionStorage.setItem('unites', unites);
+  }, 1000);
+};
+
+
+window.addEventListener('load', () => {
+  console.log('coucou');
+
+  startTimer(); 
+})
+
 // VOYAGE VOYAGE
 
-document.querySelector("#thefiltre").addEventListener("click", function () {
+//document.querySelector("#thefiltre").addEventListener("click", function () {
   // window.location.href = "";
-});
+//});
 
 document.querySelector("#makecoffee").addEventListener("click", function () {
   window.location.href = "/pages/cafetiere/cafetiere.html";
@@ -77,18 +150,20 @@ document.getElementById("eau").addEventListener("click", function () {
 });
 
 // FILTRE
-const filtre = {
-  brand: "filtre en chaussette sale",
-  image: "../assets/images/png_files/objet-dirty_water-cofee_adventure.png",
-  description:
-    "Un filtre à café composé de chausettes sales bio made in china sans aluminium",
-};
+// const filtre = {
+//   brand: "filtre en chaussette sale",
+//   image: "../assets/images/png_files/objet-dirty_water-cofee_adventure.png",
+//   description:
+//     "Un filtre à café composé de chausettes sales bio made in china sans aluminium",
+// };
 
-function addItemToInventory(filtre) {
-  localStorage.setItem(item.filtre, JSON.stringify(filtre));
-}
+// function addItemToInventory(filtre) {
+//   localStorage.setItem(item.filtre, JSON.stringify(filtre));
+// }
 
-document.getElementById("filtre").addEventListener("click", function () {
-  addItemToInventory(filtre);
-  updateInventoryDisplay(); // Pour afficher l'inventaire mis à jour
-});
+// document.getElementById("filtre").addEventListener("click", function () {
+//   addItemToInventory(filtre);
+//   updateInventoryDisplay(); // Pour afficher l'inventaire mis à jour
+// });
+  
+
