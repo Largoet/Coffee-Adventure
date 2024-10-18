@@ -1,4 +1,4 @@
-const teams = false;
+const teams = true;
 const start = 'toiletMain';
 
 const btnTop = document.getElementById('btnTop');
@@ -30,15 +30,14 @@ const roomList = {
       toiletInside: {
         img : "/assets/images/jpg_files/toilet/room_toilette_inside-cofee_adventure.jpg",
         direction: ["down"],
-        down:'toiletMain',
-        action: {
-          area: {x: '50px', y: '50px', src: ''}
-        }
-        },
+        down: 'toiletMain',
+        action: 'toilet'
+      },
 
       toilet: {
         img : "/assets/images/jpg_files/toilet/room_toilette_toilet-cofee_adventure.jpg",
-        direction: ["down"]
+        direction: ["down"],
+        down: 'toiletInside',
       }
     },
   },
@@ -69,7 +68,7 @@ const roomList = {
   start: {
     room: {
       startMain: {
-        img : !teams ? "/assets/images/jpg_files/start/room_start-cofee_adventure.jpg" : "",
+        img : "/assets/images/jpg_files/start/room_start-cofee_adventure.jpg",
         direction: ["down"],
         down: ["desktopMain"]
       }
@@ -101,14 +100,13 @@ export const room = {
   firstRoom: start,
 
   start: function(pRoom) {
-    
     loadRoom.setAttribute('src', room.loadRoom(pRoom));
-
   },
   
   loadRoom: function(pRoom) {
     room.hideArrows();
     currentRoom = rooms[pRoom];
+    
     room.loadArrows();
 
     return currentRoom.img;
@@ -154,20 +152,40 @@ function setArrows(pClass) {
 
 const up = document.querySelector('#btnTop');
 up.addEventListener('click', () => {
+  isRoomInteraction(currentRoom.up);
   room.start(currentRoom.up);
 })
 
 const down = document.querySelector('#btnBottom');
 down.addEventListener('click', () => {
+  isRoomInteraction(currentRoom.down);
   room.start(currentRoom.down);
 })
 
 const left = document.querySelector('#btnLeft');
 left.addEventListener('click', () => {
+  isRoomInteraction(currentRoom.left);
   room.start(currentRoom.left);
 })
 
 const right = document.querySelector('#btnRight');
 right.addEventListener('click', () => {
+  isRoomInteraction(currentRoom.right);
   room.start(currentRoom.right);
 })
+
+const action = document.querySelector('#action');
+action.addEventListener('click', () => {
+  room.start(currentRoom.action);
+})
+
+const isRoomInteraction = function (secretRoom) {
+  switch (secretRoom) {
+    case 'toiletInside':
+      action.style.visibility = 'visible';
+      break;
+
+    default:
+      break;
+  }
+};

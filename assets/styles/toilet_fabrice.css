@@ -215,17 +215,20 @@ button {
 
 .action {
   display: block;
-  border: 2px dashed #fff;
-  width: 25px;
-  height: 25px;
+  /* border: 2px dashed #fff; */
+  width: 3%;
+  height: 5%;
   position: absolute;
-  left: 57%;
-  top: 70%;
+  visibility: hidden;
+  left: 57.8%;
+  top: 73%;
   border-radius: 50%;
-  transition: background-color .5s ease-in-out;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
 }
 
 .action:hover {
+  border: 2px solid rgba(167, 238, 224, 0.5);
   background-color: rgba(255,255,255,30%);
 }
 
